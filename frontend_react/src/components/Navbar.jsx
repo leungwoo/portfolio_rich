@@ -4,7 +4,7 @@ import { images } from '../constants';
 
 function Navbar() {
   return (
-    <nav className="flex flex-row justify-between">
+    <nav className="flex flex-row justify-between ">
       <div>
         <img src={images.logo} alt="logo" className=" w-[200px] h-[200px]" />
       </div>
