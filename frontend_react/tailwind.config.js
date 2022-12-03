@@ -6,10 +6,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        burton: 'burtons',
+      },
       colors: {
         primary: '#5D3BEE',
         secondary: '#51586A',
         header: '#FBFAFF',
+      },
+      backgroundImage: {
+        figma: "url('https://i.postimg.cc/xCqf34RT/bg-1.png')",
       },
 
     },
