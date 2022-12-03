@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-bind */
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { HiMenu, HiX } from 'react-icons/hi';
