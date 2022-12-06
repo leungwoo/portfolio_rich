@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const Skills = () => {
+function Skills() {
   return (
     <div>Skills</div>
-  )
+  );
 }
 
-export default Skills
+export default Skills;

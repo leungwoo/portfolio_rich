@@ -1,0 +1,9 @@
+import React from 'react';
+
+function Button({ btnName, btnColor = 'primary' }) {
+  return (
+    <button type="button" className={`bg-${btnColor} text-white p-2 rounded-lg font-medium hover:bg-white hover:text-primary duration-300 ease-in-out`}>{btnName}</button>
+  );
+}
+
+export default Button;
