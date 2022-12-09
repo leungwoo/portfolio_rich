@@ -8,7 +8,7 @@ import { Button } from '../components';
 
 function Header() {
   return (
-    <motion.div className="md:bg-headerbg md:bg-cover md:bg-repeat bg-headerbg bg-cover bg-no-repeat">
+    <motion.div className="md:bg-headerbg md:bg-cover md:bg-repeat bg-figma bg-bottom bg-no-repeat">
       <div className="pt-[150px] md:pt-[150px] flex flex-col-reverse md:flex-row">
         <div className="md:flex md:w-1/2 mx-auto md:ml-20  ">
           <img src={images.richard} alt="richard" />
