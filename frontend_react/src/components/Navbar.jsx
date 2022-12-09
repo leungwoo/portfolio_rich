@@ -13,9 +13,9 @@ function Navbar() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="appBar flex flex-row justify-between items-center px-4 py-8 w-full backdrop-blur-sm backdrop-filter z-0 fixed bg-gray-100">
+    <nav className="appBar flex flex-row justify-between items-center px-4 py-8 w-full backdrop-blur-md backdrop-filter z-0 border-b border-navbarborder md:border-transparent fixed">
       <a href="#HOME" className="logo flex justify-start items-center ">
-        <img src={logo} alt="logo" className="object-cover max-w-[100px] max-h-[100px] shadow-primary shadow-md rounded-full" />
+        <img src={logo} alt="logo" className="flex-1 object-cover max-w-[80px] max-h-[80px] shadow-primary shadow-md rounded-full" />
       </a>
       <ul className="links hidden md:flex flex-1 justify-center items-center font-burton list-none text-secondary text-base">
         {['HOME', 'WORK', 'SKILLS', 'CONTACT', <Button btnName="RESUME" />, <BsFillMoonStarsFill />].map((item) => (

@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="text-3xl font-bold underline">
+      <div>
         <Header />
         <About />
         <Work />
