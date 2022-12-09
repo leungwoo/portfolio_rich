@@ -13,7 +13,7 @@ function Navbar() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="appBar flex flex-row justify-between items-center px-4 py-8 w-full backdrop-blur-md backdrop-filter z-0 border-b border-navbarborder md:border-transparent fixed">
+    <nav className="appBar flex flex-row justify-between items-center px-4 py-8 w-full backdrop-blur-md backdrop-filter z-0 border-b-2 border-navbarborder md:border-transparent fixed">
       <a href="#HOME" className="logo flex justify-start items-center ">
         <img src={logo} alt="logo" className="flex-1 object-cover max-w-[80px] max-h-[80px] shadow-primary shadow-md rounded-full" />
       </a>
