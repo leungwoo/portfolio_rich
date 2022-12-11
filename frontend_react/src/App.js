@@ -4,17 +4,16 @@ import { Navbar } from './components';
 
 function App() {
   return (
-    <>
+    <div className="max-w-[1980px]">
       <Navbar />
-      <div>
-        <Header />
-        <About />
-        <Work />
-        <Skills />
-        <Testimonials />
-        <Footer />
-      </div>
-    </>
+      <Header />
+      <About />
+      <Work />
+      <Skills />
+      <Testimonials />
+      <Footer />
+
+    </div>
   );
 }
 

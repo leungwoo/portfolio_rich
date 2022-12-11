@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        'viewport-height': 'calc(min(100vh))',
+      },
       fontFamily: {
         primary: ['Bitter', 'serif'],
       },
