@@ -1,15 +1,15 @@
 import React from 'react';
-// import { motion } from 'framer-motion';
 import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/ti';
 import { Typewriter } from 'react-simple-typewriter';
+import { motion } from 'framer-motion';
 
 import { images } from '../constants';
 import { Button } from '../components';
 
-function Header() {
+function Header({ theme }) {
   return (
-    <div className="md:border border-blue-400 md:h-viewport-height md:pt-[96px] bg-figma bg-bottom bg-no-repeat md:bg-headerbg md:bg-cover md:bg-repeat">
-      <div className="md:border border-red-400 md:pt-[170px] pt-[96px] flex flex-col-reverse md:flex-row">
+    <div className={`md:h-viewport-height lg:pt-[96px] ${theme === 'light' ? 'md:bg-backgroundImgLg && bg-backgroundImgSm' : 'md:bg-backgroundImgLgDark && bg-backgroundImgSmDark'} bg-bottom bg-no-repeat md:bg-headerbg md:bg-cover md:bg-repeat`}>
+      <div className="md:pt-[170px] pt-[96px] flex flex-col-reverse md:flex-row">
         <div className=" flex-1  mx-auto md:ml-30 md:justify-center ">
           <img src={images.richard} alt="richard" className="md:mx-auto" />
         </div>
@@ -31,16 +31,16 @@ function Header() {
           </h1>
           <div className="flex gap-4 items-center md:pt-5 pb-5">
             <Button btnName="Book a Call" />
-            <a className="underline font-bold" href="#WORK">My Works</a>
+            <motion.a whileHover={{ scale: 1.1 }} className="underline font-bold" href="#WORK">My Works</motion.a>
           </div>
-          <div className="flex flex-row items-center gap-4 ">
+          <div className="flex flex-row items-center gap-4 pb-6">
             <p className=" text-secondary">Follow me on:</p>
-            <a className="hover:shadow-primary shadow-md rounded-full" href="https://www.facebook.com/richard.l.gabriel.3/">
+            <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.facebook.com/richard.l.gabriel.3/">
               <TiSocialFacebookCircular size={30} />
-            </a>
-            <a className="hover:shadow-primary shadow-md rounded-full" href="https://www.linkedin.com/in/richard-leung-woo-gabriel-0b0822232/">
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.linkedin.com/in/richard-leung-woo-gabriel-0b0822232/">
               <TiSocialLinkedinCircular size={30} />
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>
