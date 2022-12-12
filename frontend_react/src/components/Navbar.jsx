@@ -14,13 +14,28 @@ function Navbar({ toggleTheme, theme }) {
 
   return (
     <nav className="appBar flex flex-row justify-between items-center px-4 py-3 w-full backdrop-blur-md backdrop-filter z-0 border-b-2 border-navbarborder md:border-transparent fixed">
-      <motion.a whileHover={{ scale: 1.1 }} href="#HOME" className="logo flex justify-start items-center ">
+      <motion.a
+        initial={{ x: 400, opacity: 0 }}
+        animate={{ x: 0,
+          opacity: 1,
+          rotate: 720 }}
+        transition={{ type: 'tween',
+          duration: 3,
+        }}
+        href="#HOME"
+        className="logo flex justify-start items-center "
+      >
         <img src={logo} alt="logo" className="flex-1 object-cover max-w-[70px] max-h-[70px] shadow-primary shadow-md rounded-full" />
       </motion.a>
       <ul className="links hidden md:flex flex-1 justify-center items-center list-none text-secondary text-base">
         {['HOME', 'WORK', 'SKILLS', 'CONTACT', <Button btnName="RESUME" />, theme === 'light' ? <BsFillMoonStarsFill onClick={toggleTheme} size={30} /> : <BsSunFill onClick={toggleTheme} size={30} color="yellow" />].map((item) => (
           <li key={`link - ${item}`} className="flex flex-col mx-4 cursor-pointer justify-center items-center ">
-            <motion.a whileHover={{ scale: 1.1 }} href={`#${item}`} className="flex flex-col font-medium no-underline hover:text-primary hover:animate-pulse transition-all duration-500 ease-in-out">{item}</motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1, fontWeight: 'bold' }}
+              href={`#${item}`}
+              className="flex flex-col font-medium no-underline hover:text-primary hover:animate-pulse transition-all duration-500 ease-in-out"
+            >{item}
+            </motion.a>
           </li>
         ))}
       </ul>
