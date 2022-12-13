@@ -31,7 +31,7 @@ function Header({ theme }) {
             </span>
           </h1>
           <div className="flex gap-4 items-center md:pt-5 pb-5">
-            <Button btnName="Book a Call" />
+            <Button btnName="Book a Call" btnColor="primary" />
             <motion.a whileHover={{ scale: 1.1 }} className="underline font-bold" href="#WORK">My Works</motion.a>
           </div>
           <div className="flex flex-row items-center gap-4 pb-20">

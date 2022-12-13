@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { About, Footer, Header, Skills, Testimonials, Work } from './container';
+import { About, Contact, Footer, Header, Skills, Testimonials, Work } from './container';
 import { Navbar } from './components';
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
       <Work />
       <Skills />
       <Testimonials />
+      <Contact />
       <Footer />
 
     </div>

@@ -28,15 +28,16 @@ function Navbar({ toggleTheme, theme }) {
         <img src={logo} alt="logo" className="flex-1 object-cover max-w-[70px] max-h-[70px] shadow-primary shadow-md rounded-full" />
       </motion.a>
       <ul className="links hidden md:flex flex-1 justify-center items-center list-none text-secondary text-base">
-        {['HOME', 'WORK', 'SKILLS', 'CONTACT', <Button btnName="RESUME" />, theme === 'light' ? <BsFillMoonStarsFill onClick={toggleTheme} size={30} /> : <BsSunFill onClick={toggleTheme} size={30} color="yellow" />].map((item) => (
-          <li key={`link - ${item}`} className="flex flex-col mx-4 cursor-pointer justify-center items-center ">
-            <motion.a
-              whileHover={{ scale: 1.1, fontWeight: 'bold' }}
-              href={`#${item}`}
-              className="flex flex-col font-medium no-underline hover:text-primary hover:animate-pulse transition-all duration-500 ease-in-out"
-            >{item}
-            </motion.a>
-          </li>
+        {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', <Button btnName="RESUME" btnColor="primary" />,
+          theme === 'light' ? <BsFillMoonStarsFill onClick={toggleTheme} size={30} /> : <BsSunFill onClick={toggleTheme} size={30} color="yellow" />].map((item) => (
+            <li key={`link - ${item}`} className="flex flex-col mx-4 cursor-pointer justify-center items-center ">
+              <motion.a
+                whileHover={{ scale: 1.1, fontWeight: 'bold' }}
+                href={`#${item}`}
+                className="flex flex-col font-medium no-underline hover:text-primary hover:animate-pulse transition-all duration-500 ease-in-out"
+              >{item}
+              </motion.a>
+            </li>
         ))}
       </ul>
 
