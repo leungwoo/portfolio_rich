@@ -8,7 +8,13 @@ import { Button } from '../components';
 
 function Header({ theme }) {
   return (
-    <div className={`md:h-viewport-height lg:pt-[96px] ${theme === 'light' ? 'md:bg-backgroundImgLg && bg-backgroundImgSm' : 'md:bg-backgroundImgLgDark && bg-backgroundImgSmDark'} bg-bottom bg-no-repeat md:bg-headerbg md:bg-cover md:bg-repeat`}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1,
+      }}
+      className={`md:h-viewport-height lg:pt-[96px] ${theme === 'light' ? 'md:bg-backgroundImgLg && bg-backgroundImgSm' : 'md:bg-backgroundImgLgDark && bg-backgroundImgSmDark'} bg-bottom bg-no-repeat md:bg-headerbg md:bg-cover md:bg-repeat`}
+    >
       <div className="md:pt-[170px] pt-[100px] flex flex-col-reverse md:flex-row">
         <div className=" flex-1  mx-auto md:ml-30 md:justify-center ">
           <img src={images.richard} alt="richard" className="md:mx-auto" />
@@ -45,7 +51,7 @@ function Header({ theme }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
