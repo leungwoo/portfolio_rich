@@ -13,9 +13,10 @@ const sidebarVariants = {
     y: 0,
     transition: {
       type: 'tween',
-      duration: 1,
+      duration: 0.6,
       damping: 10,
-
+      when: 'beforeChildren',
+      staggerChildren: 0.2,
     },
   },
   closed: {
@@ -23,8 +24,9 @@ const sidebarVariants = {
     y: '100%',
     transition: {
       type: 'tween',
-      duration: 2,
-      damping: 40,
+      duration: 1.5,
+      damping: 10,
+      staggerChildren: 0.1,
     },
   },
   exit: {
@@ -33,11 +35,24 @@ const sidebarVariants = {
   },
 };
 
+const listVariant = {
+  closed: {
+    opacity: 0,
+    x: -10,
+  },
+  open: {
+    opacity: 1,
+    x: 1,
+    staggerChildren: 0.3,
+    staggerDirection: 1,
+  },
+};
+
 function Sidebar({ setToggle, toggle, toggleTheme, theme }) {
   return (
     <AnimatePresence>
       <motion.div
-        className={`rounded-tl-3xl z-20 top-0 bottom-0 right-0 p-4 w-[50%] h-screen flex flex-col
+        className={`container rounded-tl-3xl z-20 top-0 bottom-0 right-0 p-4 w-[50%] h-screen flex flex-col
          ${theme === 'light' ? 'bg-sidebarLight' : 'bg-sidebarDark'} justify-end items-end bg-cover bg-no-repeat bg-center bg-figma bg-white fixed`}
         animate={toggle ? 'open' : 'closed'}
         initial="hidden"
@@ -50,14 +65,11 @@ function Sidebar({ setToggle, toggle, toggleTheme, theme }) {
         >
           {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', 'RESUME', theme === 'light' ? <BsFillMoonStarsFill onClick={toggleTheme} size={20} /> : <BsSunFill onClick={toggleTheme} size={20} color="yellow" />].map((item) => (
             <motion.li
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
-              whileHover={{ scale: 1.1 }}
+              variants={listVariant}
+              key={item}
               className={`flex flex-col m-4 cursor-pointer border border-transparent p-2 rounded-lg bg-primary ${theme === 'light' ? 'text-white' : 'text-white'} `}
             >
               <a
-                key={item}
                 href={`#${item}`}
                 onClick={() => setToggle(false)}
                 className="flex flex-col font-medium text-sm no-underline hover:animate-pulse transition-all duration-500 ease-in-out"
@@ -65,7 +77,7 @@ function Sidebar({ setToggle, toggle, toggleTheme, theme }) {
               </a>
             </motion.li>
           ))}
-        </motion.ul>
+        </ul>
       </motion.div>
     </AnimatePresence>
   );
