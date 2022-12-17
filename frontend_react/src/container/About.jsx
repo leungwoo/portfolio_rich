@@ -5,8 +5,7 @@ import { motion } from 'framer-motion';
 import images from '../constants/images';
 // import {urlFor, client } from '../client';
 
-import { AboutMe } from '../components';
-import { Experience, Testimonials } from './index';
+import { AboutMe, Experience, Testimonials } from './index';
 
 const { react, js, next, sanity, mongodb, tailwind, framer, figma, meAnimated, coding, thumbs, experience } = images;
 
@@ -100,7 +99,7 @@ function About({ theme }) {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row md:px-[200px]">
-        <div className="flex-1 px-4 z-0">
+        <div className="flex-1 px-5 z-0">
           {about.map((item, index) => (
             <motion.div
               key={index}

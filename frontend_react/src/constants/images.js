@@ -18,6 +18,10 @@ import coding from '../assets/coding.jpeg';
 import thumbs from '../assets/thumbsup.png';
 import experience from '../assets/experience.png';
 import github from '../assets/github.jpg';
+import carRental from '../assets/Carrental.png';
+import musicApp from '../assets/musicApp.png';
+import trainApp from '../assets/trainhard.png';
+import movieApp from '../assets/filmpire.png';
 
 export default {
   logo,
@@ -40,4 +44,8 @@ export default {
   thumbs,
   experience,
   github,
+  carRental,
+  movieApp,
+  trainApp,
+  musicApp,
 };

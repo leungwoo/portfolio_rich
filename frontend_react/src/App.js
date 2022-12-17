@@ -22,7 +22,7 @@ function App() {
       <Navbar toggleTheme={toggleTheme} theme={theme} />
       <Header theme={theme} />
       <About theme={theme} />
-      <Projects />
+      <Projects theme={theme} />
       <Contact />
       <Footer />
 
