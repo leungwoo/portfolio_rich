@@ -47,7 +47,7 @@ function About({ theme }) {
   return (
     <div
       id="ABOUT"
-      className="h-viewport-height pt-[96px] overflow-y-hidden"
+      className="h-viewport-height pt-[96px] overflow-y-auto"
     >
       <div className="flex flex-col pb-5 md:flex-row md:px-[200px] justify-evenly items-center gap-10 md:gap-20">
         <div className="flex flex-col md:flex-row items-center flex-1">
@@ -99,7 +99,7 @@ function About({ theme }) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col lg:flex-row md:px-[200px]">
         <div className="flex-1 px-4 z-0">
           {about.map((item, index) => (
             <motion.div
@@ -108,10 +108,10 @@ function About({ theme }) {
               onClick={() => handleClick(index)}
               className={`flex flex-row md:flex-col my-4 md:p-4 p-2 ${theme === 'light' ? 'bg-skills' : 'bg-secondary'} cursor-pointer rounded-full justify-evenly items-center z-0 hover:bg-gradient-to-tl from-primary to-white`}
             >
-              <div className="text-2xl md:text-3xl">
+              <div className={`text-2xl md:text-3xl ${theme === 'light' ? 'text-secondary' : 'text-white'}`}>
                 {item.title}
               </div>
-              <img src={item.imgUrl} alt={item.title} className="md:w-10 md:h-10 w-8 h-8 object-contain" />
+              <img src={item.imgUrl} alt={item.title} className="md:w-10 md:h-10 w-8 h-8 object-contain hover:animate-ping" />
             </motion.div>
           ))}
         </div>
