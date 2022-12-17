@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { About, Contact, Footer, Header, Skills, Testimonials, Work } from './container';
+import { About, Contact, Footer, Header, Projects } from './container';
 import { Navbar } from './components';
 
 function App() {
@@ -21,10 +21,8 @@ function App() {
     <div className="max-w-[1980px]">
       <Navbar toggleTheme={toggleTheme} theme={theme} />
       <Header theme={theme} />
-      <About />
-      <Work />
-      <Skills />
-      <Testimonials />
+      <About theme={theme} />
+      <Projects />
       <Contact />
       <Footer />
 

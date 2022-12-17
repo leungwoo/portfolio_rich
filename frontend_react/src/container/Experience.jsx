@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/ti';
 import { ImGithub } from 'react-icons/im';
 
-function Testimonials() {
+function Experience() {
   return (
     <div
       className="flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-y-auto px-5"
     >
       <div className="flex flex-row items-center justify gap-2">
-        <h1 className="text-2xl">Testimonials</h1><div className="w-[50px] h-0.5 bg-primary" />
+        <h1 className="text-2xl">Experience</h1><div className="w-[50px] h-0.5 bg-primary" />
       </div>
       <p className="pt-5">Hi my name is Richard Leung Woo-Gabriel. I am a Full Stack Web Developer.
         I currently work remote as software engineer and have always had a passion for problem solving.
@@ -39,4 +39,4 @@ function Testimonials() {
   );
 }
 
-export default Testimonials;
+export default Experience;

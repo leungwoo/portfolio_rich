@@ -11,6 +11,13 @@ import next from '../assets/next.png';
 import react from '../assets/react.png';
 import sanity from '../assets/sanity.png';
 import tailwind from '../assets/tailwind.png';
+import framer from '../assets/framer.png';
+import figma from '../assets/figma.png';
+import meAnimated from '../assets/meanimated.png';
+import coding from '../assets/coding.jpeg';
+import thumbs from '../assets/thumbsup.png';
+import experience from '../assets/experience.png';
+import github from '../assets/github.jpg';
 
 export default {
   logo,
@@ -26,4 +33,11 @@ export default {
   react,
   sanity,
   tailwind,
+  framer,
+  figma,
+  meAnimated,
+  coding,
+  thumbs,
+  experience,
+  github,
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Button({ btnName, btnColor }) {
   return (
-    <div className={`bg-${btnColor} text-white p-2 rounded-lg font-medium hover:bg-white hover:text-primary duration-300 ease-in-out cursor-pointer`}>{btnName}</div>
+    <div className={`bg-${btnColor} text-white p-2 rounded-lg font-medium hover:bg-gradient-to-tl from-primary to-white hover:cursor-pointer`}>{btnName}</div>
 
   );
 }

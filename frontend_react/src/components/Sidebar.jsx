@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HiX } from 'react-icons/hi';
-import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
+// import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
 
 const sidebarVariants = {
   hidden: {
@@ -13,10 +13,10 @@ const sidebarVariants = {
     y: 0,
     transition: {
       type: 'tween',
-      duration: 0.6,
+      duration: 0.5,
       damping: 10,
       when: 'beforeChildren',
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
   closed: {
@@ -24,7 +24,7 @@ const sidebarVariants = {
     y: '100%',
     transition: {
       type: 'tween',
-      duration: 1.5,
+      duration: 1.2,
       damping: 10,
       staggerChildren: 0.1,
     },
@@ -42,13 +42,13 @@ const listVariant = {
   },
   open: {
     opacity: 1,
-    x: 1,
+    x: 0,
     staggerChildren: 0.3,
     staggerDirection: 1,
   },
 };
 
-function Sidebar({ setToggle, toggle, toggleTheme, theme }) {
+function Sidebar({ setToggle, toggle, theme }) {
   return (
     <AnimatePresence>
       <motion.div
@@ -63,7 +63,7 @@ function Sidebar({ setToggle, toggle, toggleTheme, theme }) {
         <ul
           className="links  h-screen w-full list-none m-0 p-0 flex flex-col justify-start items-start "
         >
-          {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', 'RESUME', theme === 'light' ? <BsFillMoonStarsFill onClick={toggleTheme} size={20} /> : <BsSunFill onClick={toggleTheme} size={20} color="yellow" />].map((item) => (
+          {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', 'RESUME'].map((item) => (
             <motion.li
               variants={listVariant}
               key={item}

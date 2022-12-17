@@ -18,6 +18,7 @@ module.exports = {
         secondary: '#51586A',
         header: '#FBFAFF',
         navbarborder: '#D6D3E2',
+        skills: 'rgba(231, 225, 255,0.5)',
       },
       backgroundImage: {
         backgroundImgSm: "url('https://i.postimg.cc/xCqf34RT/bg-1.png')",
