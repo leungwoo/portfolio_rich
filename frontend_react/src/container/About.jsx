@@ -83,6 +83,7 @@ function About({ theme }) {
                 key={index}
                 whileHover={{ scale: 1.1 }}
                 href={tech.link}
+                viewport={{ once: false, amount: 0.25 }}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -99,11 +100,14 @@ function About({ theme }) {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row md:px-[200px]">
-        <div className="flex-1 px-5 z-0">
+        <motion.div className="flex-1 px-5 z-0">
           {about.map((item, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.05 }}
+              // whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: [0, 1] }}
+              hidden={{ opacity: 1 }}
               onClick={() => handleClick(index)}
               className={`flex flex-row md:flex-col my-4 md:p-4 p-2 ${theme === 'light' ? 'bg-skills' : 'bg-secondary'} cursor-pointer rounded-full justify-evenly items-center z-0 hover:bg-gradient-to-tl from-primary to-white`}
             >
@@ -113,7 +117,7 @@ function About({ theme }) {
               <img src={item.imgUrl} alt={item.title} className="md:w-10 md:h-10 w-8 h-8 object-contain hover:animate-ping" />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
         <motion.div
           className="flex-1 justify-center items-center  "
         >
