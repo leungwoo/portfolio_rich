@@ -104,6 +104,7 @@ function About({ theme }) {
                 key={about.title + index}
                 whileHover={{ scale: 1.1 }}
                 href={about.link}
+                viewport={{ once: false, amount: 0.25 }}
                 target="_blank"
                 rel="noreferrer"
               >
