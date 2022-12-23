@@ -16,7 +16,7 @@ function Projects() {
   return (
     <div
       id="PROJECTS"
-      className="bg-gradient-to-tr from-primary to-skills h-viewport-height pt-[96px] overflow-y-auto"
+      className="bg-gradient-to-tr from-primary to-skills md:h-viewport-height pt-[96px] overflow-y-auto"
     >
       <div className="flex flex-col pb-5 md:flex-row md:px-[200px] px-5 justify-center items-center">
         <h1 className="flex-1 text-[30px] md:text-[40px] font-medium">Take a look at
@@ -36,7 +36,7 @@ function Projects() {
             href={project.link}
             target="_blank"
             rel="noreferrer"
-            whileHover={{ scale: 1.1, y: -50 }}
+            whileHover={{ scale: 1.01 }}
             key={index}
           >
             <img src={project.imgUrl} alt={project.title} className="flex rounded-lg object-cover" />
