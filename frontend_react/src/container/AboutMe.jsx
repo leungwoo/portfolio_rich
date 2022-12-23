@@ -4,9 +4,28 @@ import { motion } from 'framer-motion';
 import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/ti';
 import { ImGithub } from 'react-icons/im';
 
+const fadeIn = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      duration: 1,
+      ease: 'linear',
+    },
+  },
+};
+
 function AboutMe() {
   return (
-    <div
+    <motion.div
+      variants={fadeIn}
+      animate="show"
+      initial="hidden"
       className="flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-y-auto px-5"
     >
       <div className="flex flex-row items-center justify gap-2">
@@ -35,7 +54,7 @@ function AboutMe() {
           <ImGithub size={30} />
         </motion.a>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

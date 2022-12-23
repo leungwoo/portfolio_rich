@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import images from '../constants/images';
@@ -49,14 +49,16 @@ function About({ theme }) {
     }
   }, [inView]);
 
-  const handleClick = (index) => {
-    setSelectedItem(index);
+  const handleClick = (title) => {
+    setSelectedItem(title);
   };
 
   useEffect(() => {
     const query = '*[_type == "abouts"]';
 
     client.fetch(query).then((data) => setAbouts(data));
+
+    console.log(abouts);
   }, []);
 
   return (
@@ -126,11 +128,10 @@ function About({ theme }) {
           {sections.map((item, index) => (
             <motion.div
               key={index}
-              // whileHover={{ scale: 1.05 }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: [0, 1] }}
               hidden={{ opacity: 1 }}
-              onClick={() => handleClick(index)}
+              onClick={() => handleClick(item.title)}
               className={`flex flex-row md:flex-col my-4 md:p-4 p-2 ${theme === 'light' ? 'bg-skills' : 'bg-secondary'} cursor-pointer rounded-full justify-evenly items-center z-0 hover:bg-gradient-to-tl from-primary to-white`}
             >
               <div className={`text-2xl md:text-3xl ${theme === 'light' ? 'text-secondary' : 'text-white'}`}>
@@ -140,14 +141,17 @@ function About({ theme }) {
             </motion.div>
           ))}
         </div>
-        <motion.div
-          className="flex-1 justify-center items-center  "
-        >
-          {selectedItem === null ? <img src={coding} className="w-full object-cover max-h-[400px] rounded-full" /> : null}
-          {selectedItem === 0 ? <AboutMe /> : null}
-          {selectedItem === 1 ? <Testimonials /> : null}
-          {selectedItem === 2 ? <Experience /> : null}
-        </motion.div>
+        <AnimatePresence>
+          <motion.div
+            className="flex-1 justify-center items-center  "
+          >
+            {selectedItem === null ? <img src={coding} className="w-full object-cover max-h-[400px] rounded-full" /> : null}
+            {/* {selectedItem === 0 ? <AboutMe /> : null} */}
+            {selectedItem === 'About Me' && <AboutMe />}
+            {selectedItem === 'Testimonials' ? <Testimonials /> : null}
+            {selectedItem === 'Experience' ? <Experience /> : null}
+          </motion.div>
+        </AnimatePresence>
       </div>
 
     </motion.div>
