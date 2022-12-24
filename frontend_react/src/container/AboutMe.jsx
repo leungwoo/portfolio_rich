@@ -7,7 +7,7 @@ import { ImGithub } from 'react-icons/im';
 const fadeIn = {
   hidden: {
     opacity: 0,
-    y: 100,
+    y: -100,
   },
   show: {
     opacity: 1,
@@ -39,7 +39,7 @@ function AboutMe() {
       <p>
         Discipline and work ethic have been my strong points and belief to accomplish any task i undertake. Patience has been a key asset of mine when working with teams and accomplishing projects.
         Besides my passion for software development i enjoy competitive sports and visiting new places with my family.
-        Please feel free to reach out if you want to connect or know about any interesting hiring opporitunities.
+        Please feel free to reach out if you want to connect or just hangout and chat about technology over coffee.
       </p>
       <br />
       <div className="flex flex-row items-center gap-4 pb-20">

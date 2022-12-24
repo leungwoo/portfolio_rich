@@ -5,8 +5,24 @@ import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/
 import { ImGithub } from 'react-icons/im';
 
 function Experience() {
+  const fadeIn = {
+    hidden: {
+      opacity: 0,
+      y: 100 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        duration: 1,
+        ease: 'linear' } },
+  };
+
   return (
-    <div
+    <motion.div
+      variants={fadeIn}
+      initial="hidden"
+      animate="show"
       className="flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-y-auto px-5"
     >
       <div className="flex flex-row items-center justify gap-2">
@@ -35,7 +51,7 @@ function Experience() {
           <ImGithub size={30} />
         </motion.a>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
