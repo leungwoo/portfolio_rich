@@ -1,7 +1,8 @@
-/* eslint-disable no-console */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/ti';
+import { ImGithub } from 'react-icons/im';
 
 import { images } from '../constants';
 
@@ -38,15 +39,26 @@ function ContactForm({ theme }) {
        ${theme === 'light' ? 'bg-bgContact' : 'bg-bgContactDark'} bg-center bg-no-repeat bg-cover`}
     >
       <div className="flex-1 justify-center items-center">
-        <div className="flex flex-col md:flex-row items-center md:gap-2">
+        <div className="flex flex-col md:flex-row justify-center items-center md:gap-2">
           <div className="flex w-[86px] h-0.5 bg-primary mb-2" />
-          <h1 className="text-[30px] md:text-5xl font-medium pb-5">Got a project? Let’s talk</h1>
+          <h1 className="text-[36px] md:text-[42px] font-medium pb-5">Got a project? Let’s talk</h1>
         </div>
         <h1 className="hidden md:flex">
-          <span className="py-5 text-secondary font-bold italic">
+          <span className="pb-4 text-secondary font-bold italic">
             “Plan, take Massive Action and Fail Forward.  –Richard Leung Woo-Gabriel ”
           </span>
         </h1>
+        <div className="flex flex-row justify-center items-center gap-4 pb-10">
+          <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.facebook.com/richard.l.gabriel.3/" target="_blank">
+            <TiSocialFacebookCircular size={35} />
+          </motion.a>
+          <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.linkedin.com/in/richard-leung-woo-gabriel-0b0822232/" target="_blank">
+            <TiSocialLinkedinCircular size={35} />
+          </motion.a>
+          <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://github.com/leungwoo" target="_blank">
+            <ImGithub size={30} />
+          </motion.a>
+        </div>
         <img src={contactProject} alt="contact" className=" object-cover max-h-[400px] md:max-h-[500px] rounded-full pb-5" />
       </div>
       <form onSubmit={handleSubmit} className=" flex-1 mx-auto max-w-md mb-2">
@@ -109,7 +121,6 @@ function ContactForm({ theme }) {
     </motion.div>
   );
 }
-
 export default ContactForm;
 // service_l9e6o0j
 // service_bkpc7ag

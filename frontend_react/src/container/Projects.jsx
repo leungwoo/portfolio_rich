@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/ti';
+import { ImGithub } from 'react-icons/im';
 
 import { images } from '../constants';
 
@@ -27,14 +29,27 @@ function Projects() {
       >
         <div className="flex flex-col md:flex-row items-center flex-1 md:gap-2 mb-4">
           <div className="w-[86px] h-0.5 bg-primary mb-2" />
-          <h1 className="text-[30px] md:text-[40px] font-medium">Take a look at
+          <h1 className="text-[36px] md:text-[42px] font-medium">Take a look at
             my recent projects
           </h1>
         </div>
-        <p className="flex-1 text-base md:text-lg font-normal mb-2">
-          Welcome to my portfolio of projects built with React, Next.js, and Tailwind CSS and other in demand technologies.
-          In these projects, you will see how i have used these tools to build fast, responsive, and scalable web applications.
-        </p>
+        <div className="flex-1 ">
+          <p className="flex-1 text-base md:text-lg font-normal mb-2">
+            Welcome to my portfolio of projects built with demand technologies.
+            In these projects, you will see how i have used these tools to build fast, responsive, and scalable web applications.
+          </p>
+          <div className="flex flex-row justify-center items-center gap-4 pb-4">
+            <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.facebook.com/richard.l.gabriel.3/" target="_blank">
+              <TiSocialFacebookCircular size={35} />
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.linkedin.com/in/richard-leung-woo-gabriel-0b0822232/" target="_blank">
+              <TiSocialLinkedinCircular size={35} />
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://github.com/leungwoo" target="_blank">
+              <ImGithub size={30} />
+            </motion.a>
+          </div>
+        </div>
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}

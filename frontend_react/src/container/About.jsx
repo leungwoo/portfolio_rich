@@ -46,7 +46,7 @@ function About({ theme }) {
       >
         <div className="flex flex-col md:flex-row items-center flex-1 md:gap-2">
           <div className="flex w-[86px] h-0.5 bg-primary mb-2" />
-          <div className="flex text-[28px] md:text-[42px] gap-2">
+          <div className="flex text-[36px] md:text-[42px] font-medium gap-2">
             <span>My</span>
             <br />
             <span>Technologies</span>

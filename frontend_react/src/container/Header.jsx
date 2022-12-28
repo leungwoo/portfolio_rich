@@ -3,6 +3,7 @@ import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 
+import { ImGithub } from 'react-icons/im';
 import { images } from '../constants';
 
 function Header({ theme }) {
@@ -52,6 +53,9 @@ function Header({ theme }) {
             </motion.a>
             <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.linkedin.com/in/richard-leung-woo-gabriel-0b0822232/" target="_blank">
               <TiSocialLinkedinCircular size={35} />
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://github.com/leungwoo" target="_blank">
+              <ImGithub size={30} />
             </motion.a>
           </div>
         </div>
