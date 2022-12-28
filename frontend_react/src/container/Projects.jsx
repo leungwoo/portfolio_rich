@@ -16,7 +16,7 @@ function Projects() {
   return (
     <div
       id="PROJECTS"
-      className="bg-gradient-to-tr from-primary to-skills md:h-viewport-height pt-[96px] overflow-y-auto"
+      className="bg-gradient-to-tr from-primary to-skills md:h-viewport-height pt-[110px] overflow-y-auto"
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -25,12 +25,13 @@ function Projects() {
         viewport={{ once: false, amount: 0.25 }}
         className="flex flex-col pb-5 md:flex-row md:px-[200px] px-5 justify-center items-center"
       >
+        <div className="flex w-[86px] h-0.5 bg-primary mb-2" />
         <h1 className="flex-1 text-[30px] md:text-[40px] font-medium">Take a look at
           my recent projects
         </h1>
         <p className="flex-1 text-base md:text-lg font-normal">
-          The projects required learning new technologies and team effort and collaboration under the guidance,
-          of Senior Mentors. Each project encouraged fast critical thinking and problem solving while under deadlines.
+          The projects consist of different technologies with respect to front end and backend, CRUD functionality and contributing to open source projects.
+          Each project encouraged critical thinking and problem solving while under deadlines.
         </p>
       </motion.div>
       <motion.div
@@ -42,12 +43,12 @@ function Projects() {
       >
         {projects.map((project, index) => (
           <motion.a
-            className=" cursor-pointer flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] rounded-lg"
+            className=" cursor-pointer flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] relative rounded-lg shadow-lg overflow-hidden"
             href={project.link}
             target="_blank"
             rel="noreferrer"
             whileHover={{ scale: 1.04 }}
-            key={index}
+            key={project.title + index}
           >
             <img src={project.imgUrl} alt={project.title} className="flex rounded-lg object-cover" />
           </motion.a>

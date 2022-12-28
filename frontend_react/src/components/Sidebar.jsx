@@ -1,7 +1,6 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HiX } from 'react-icons/hi';
-// import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
 
 const sidebarVariants = {
   hidden: {

@@ -4,7 +4,6 @@ import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 
 import { images } from '../constants';
-import { Button } from '../components';
 
 function Header({ theme }) {
   return (
@@ -15,8 +14,7 @@ function Header({ theme }) {
     >
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
+        whileInView={{ opacity: [0, 1] }}
         className="md:pt-[170px] pt-[100px] flex flex-col-reverse md:flex-row"
       >
         <div className=" flex-1  mx-auto md:ml-30 md:justify-center ">
@@ -40,7 +38,11 @@ function Header({ theme }) {
             </span>
           </h1>
           <div className="flex gap-4 items-center md:pt-5 pb-5">
-            <Button btnName="Book a Call" btnColor="primary" />
+            <a href="#CONTACT">
+              <button type="button" className="bg-primary text-white p-2 rounded-lg font-medium hover:bg-gradient-to-tl from-primary to-white hover:cursor-pointer">
+                Send Message
+              </button>
+            </a>
             <motion.a whileHover={{ scale: 1.1 }} className="underline font-bold" href="#PROJECTS">My Works</motion.a>
           </div>
           <div className="flex flex-row items-center gap-4 pb-20">

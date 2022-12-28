@@ -36,7 +36,7 @@ function About({ theme }) {
   }, []);
 
   return (
-    <div id="ABOUT" className="md:h-viewport-height pt-[96px] overflow-y-auto">
+    <div id="ABOUT" className="md:h-viewport-height pt-[110px] overflow-y-auto">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: [0, 1] }}
@@ -118,7 +118,6 @@ function About({ theme }) {
         </div>
         <div className="flex-1 justify-center items-center">
           {selectedItem === null ? <img src={coding} className="w-full object-cover max-h-[400px] rounded-full" /> : null}
-          {/* {selectedItem === 0 ? <AboutMe /> : null} */}
           {selectedItem === 'About Me' && <AboutMe />}
           {selectedItem === 'Testimonials' ? <Testimonials /> : null}
           {selectedItem === 'Experience' ? <Experience /> : null}

@@ -23,7 +23,7 @@ function App() {
       <Header theme={theme} />
       <About theme={theme} />
       <Projects theme={theme} />
-      <Contact />
+      <Contact theme={theme} />
       <Footer />
 
     </div>

@@ -21,6 +21,8 @@ module.exports = {
         skills: 'rgba(231, 225, 255,0.5)',
       },
       backgroundImage: {
+        backgroundImgContact: "url('https://i.postimg.cc/nzQB8HBn/contactbg.png')",
+        backgroundImgContactDark: "url('https://i.postimg.cc/2yQW620J/contactbgdark.jpg')",
         backgroundImgSm: "url('https://i.postimg.cc/xCqf34RT/bg-1.png')",
         backgroundImgLg: "url('https://i.postimg.cc/y6X1W52C/headerbg.jpg')",
         backgroundImgSmDark: "url('https://i.postimg.cc/GhyVpNgP/bg-1-bl.jpg')",

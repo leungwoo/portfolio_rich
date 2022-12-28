@@ -22,6 +22,7 @@ import carRental from '../assets/Carrental.png';
 import musicApp from '../assets/musicApp.png';
 import trainApp from '../assets/trainhard.png';
 import movieApp from '../assets/filmpire.png';
+import contactProject from '../assets/contactProject.jpg';
 
 export default {
   logo,
@@ -48,4 +49,5 @@ export default {
   movieApp,
   trainApp,
   musicApp,
+  contactProject,
 };
