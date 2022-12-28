@@ -13,17 +13,18 @@ function ContactForm({ theme }) {
     email: '',
     message: '',
   });
+  const [loading, setLoading] = useState(false);
+
+  const { username, email, message } = formState;
 
   const handleChange = (e) => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormState({ ...formState, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('message sent!');
+    setLoading(true);
   };
 
   return (
@@ -33,7 +34,7 @@ function ContactForm({ theme }) {
       hidden={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.25 }}
       id="CONTACT"
-      className={`flex flex-col md:flex-row md:h-viewport-height pt-[110px] md:gap-20 md:px-[200px] px-5  overflow-y-auto ${theme === 'light' ? 'bg-backgroundImgLg' : 'bg-backgroundImgLgDark'} bg-cover bg-no-repeat bg-center`}
+      className={`flex flex-col md:flex-row md:h-viewport-height pt-[110px] md:gap-20 md:px-[100px] lg:px-[200px] px-5  overflow-y-auto ${theme === 'light' ? 'bg-backgroundImgLg' : 'bg-backgroundImgLgDark'} bg-cover bg-no-repeat bg-center`}
     >
       <div className="flex-1 justify-center items-center">
         <div className="flex flex-col md:flex-row items-center md:gap-2">
@@ -47,7 +48,7 @@ function ContactForm({ theme }) {
         </h1>
         <img src={contactProject} alt="contact" className=" object-cover max-h-[400px] md:max-h-[500px] rounded-full pb-5" />
       </div>
-      <form onSubmit={handleSubmit} className=" flex-1 mx-auto max-w-md">
+      <form onSubmit={handleSubmit} className=" flex-1 mx-auto max-w-md mb-2">
         <div className="mb-4">
           <label
             htmlFor="name"
@@ -57,8 +58,8 @@ function ContactForm({ theme }) {
           </label>
           <input
             type="text"
-            name="name"
-            value={formState.name}
+            name="username"
+            value={username}
             onChange={handleChange}
             required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -74,7 +75,7 @@ function ContactForm({ theme }) {
           <input
             type="email"
             name="email"
-            value={formState.email}
+            value={email}
             onChange={handleChange}
             required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -89,7 +90,7 @@ function ContactForm({ theme }) {
           </label>
           <textarea
             name="message"
-            value={formState.message}
+            value={message}
             onChange={handleChange}
             required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
@@ -100,7 +101,7 @@ function ContactForm({ theme }) {
             type="submit"
             className="bg-primary text-white p-2 rounded-lg font-medium hover:bg-gradient-to-tl from-primary to-white hover:cursor-pointer"
           >
-            Send
+            {!loading ? 'Send Message' : 'Sending....'}
           </button>
         </div>
       </form>

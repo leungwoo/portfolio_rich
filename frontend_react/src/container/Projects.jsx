@@ -23,15 +23,17 @@ function Projects() {
         whileInView={{ opacity: [0, 1] }}
         hidden={{ opacity: 1 }}
         viewport={{ once: false, amount: 0.25 }}
-        className="flex flex-col pb-5 md:flex-row md:px-[200px] px-5 justify-center items-center"
+        className="flex flex-col pb-5 md:flex-row md:px-[100px] lg:px-[200px] px-5 justify-center items-center"
       >
-        <div className="flex w-[86px] h-0.5 bg-primary mb-2" />
-        <h1 className="flex-1 text-[30px] md:text-[40px] font-medium">Take a look at
-          my recent projects
-        </h1>
-        <p className="flex-1 text-base md:text-lg font-normal">
-          The projects consist of different technologies with respect to front end and backend, CRUD functionality and contributing to open source projects.
-          Each project encouraged critical thinking and problem solving while under deadlines.
+        <div className="flex flex-col md:flex-row items-center flex-1 md:gap-2 mb-4">
+          <div className="w-[86px] h-0.5 bg-primary mb-2" />
+          <h1 className="text-[30px] md:text-[40px] font-medium">Take a look at
+            my recent projects
+          </h1>
+        </div>
+        <p className="flex-1 text-base md:text-lg font-normal mb-2">
+          Welcome to my portfolio of projects built with React, Next.js, and Tailwind CSS and other in demand technologies.
+          In these projects, you will see how i have used these tools to build fast, responsive, and scalable web applications.
         </p>
       </motion.div>
       <motion.div

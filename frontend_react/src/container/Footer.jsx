@@ -1,4 +1,7 @@
 import React from 'react';
+import { images } from '../constants';
+
+const { logo } = images;
 
 function Footer() {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -9,7 +12,7 @@ function Footer() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <img src="image.jpg" alt="Card" className="w-full h-64 object-cover" />
+      <img src={logo} alt="Card" className="w-full h-64 object-cover" />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">Card title</div>
         <p className="text-gray-700 text-base">

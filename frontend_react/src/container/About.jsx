@@ -42,9 +42,9 @@ function About({ theme }) {
         whileInView={{ opacity: [0, 1] }}
         hidden={{ opacity: 1 }}
         viewport={{ once: false, amount: 0.25 }}
-        className="flex flex-col pb-5 md:flex-row md:px-[200px] justify-evenly items-center gap-10 md:gap-20"
+        className="flex flex-col pb-5 lg:flex-row md:px-[100px] lg:px-[200px] justify-evenly items-center gap-10 md:gap-20"
       >
-        <div className="flex flex-col md:flex-row items-center flex-1">
+        <div className="flex flex-col md:flex-row items-center flex-1 md:gap-2">
           <div className="flex w-[86px] h-0.5 bg-primary mb-2" />
           <div className="flex text-[28px] md:text-[42px] gap-2">
             <span>My</span>
