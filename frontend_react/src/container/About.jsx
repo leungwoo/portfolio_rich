@@ -73,7 +73,7 @@ function About({ theme }) {
               </motion.a>
             ))}
           </div>
-          <div className="flex flex-col max-h-[140px] md:flex-row justify-between items-center flex-1 p-1 md:gap-10 gap-5">
+          <div className="flex flex-col max-h-[140px] md:flex-row justify-between items-center p-2 md:gap-10 gap-5 flex-1">
             {secondList.map((about, index) => (
               <motion.a
                 key={about.title + index}
@@ -112,7 +112,7 @@ function About({ theme }) {
               <div className={`text-2xl md:text-3xl ${theme === 'light' ? 'text-secondary' : 'text-white'}`}>
                 {item.title}
               </div>
-              <img src={item.imgUrl} alt={item.title} className="md:w-10 md:h-10 w-8 h-8 object-contain hover:animate-ping" />
+              <img src={item.imgUrl} alt={item.title} className="md:w-10 md:h-10 w-8 h-8 object-contain" />
             </div>
           ))}
         </div>

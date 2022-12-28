@@ -1,35 +1,35 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
 import { images } from '../constants';
 
 const { logo } = images;
 
 function Footer() {
-  const [isHovered, setIsHovered] = React.useState(false);
-
   return (
-    <div
-      className="relative rounded-lg shadow-lg overflow-hidden"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <img src={logo} alt="Card" className="w-full h-64 object-cover" />
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">Card title</div>
-        <p className="text-gray-700 text-base">
-          Some brief description of the card content.
+    <div className="flex flex-col items-center justify-center mt-5">
+      <div className="flex flex-col items-center justify-between mb-4">
+        <img src={logo} alt="logo" className="flex-1 object-cover mb-4 max-w-[70px] max-h-[70px] shadow-primary shadow-sm rounded-full" />
+        <ul className="md:flex flex-1 justify-end items-center list-none text-base">
+          {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', <a href="https://www.dropbox.com/s/5arl2s285thrzej/Richard_Leung%20Woo-Gabriel_Resume.pdf?dl=0" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>,
+          ].map((item) => (
+            <li key={item} className="flex flex-col mx-4 cursor-pointer justify-center items-center ">
+              <motion.a
+                whileHover={{ scale: 1.1, fontWeight: 'bold' }}
+                href={`#${item}`}
+                className="flex flex-col font-medium no-underline hover:text-primary hover:transition-all duration-500 ease-in-out"
+              >{item}
+              </motion.a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className=" justify-center items-center">
+        <div className="mx-[50px] h-0.5 bg-primary mb-2" />
+        <p className="text-footer text-sm md:text-base">©RichardLeungWooGabriel 2022.
+          All rights reserved.
         </p>
       </div>
-      {isHovered && (
-        <div className="absolute inset-0 bg-gray-900 bg-opacity-50" />
-      )}
-      {isHovered && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-white p-2">
-            <p className="text-xl font-bold">Hover text</p>
-            <p className="text-base">Some additional information</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

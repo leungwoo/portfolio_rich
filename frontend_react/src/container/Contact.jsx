@@ -34,7 +34,8 @@ function ContactForm({ theme }) {
       hidden={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.25 }}
       id="CONTACT"
-      className={`flex flex-col md:flex-row md:h-viewport-height pt-[110px] md:gap-20 md:px-[100px] lg:px-[200px] px-5  overflow-y-auto ${theme === 'light' ? 'bg-backgroundImgLg' : 'bg-backgroundImgLgDark'} bg-cover bg-no-repeat bg-center`}
+      className={`flex flex-col md:flex-row md:h-viewport-height pt-[110px] md:gap-20 md:px-[100px] lg:px-[200px] px-5  overflow-y-auto
+       ${theme === 'light' ? 'bg-bgContact' : 'bg-bgContactDark'} bg-center bg-no-repeat bg-cover`}
     >
       <div className="flex-1 justify-center items-center">
         <div className="flex flex-col md:flex-row items-center md:gap-2">

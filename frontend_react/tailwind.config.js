@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         primary: '#5D3BEE',
         secondary: '#51586A',
+        footer: '#525771',
         header: '#FBFAFF',
         navbarborder: '#D6D3E2',
         skills: 'rgba(231, 225, 255,0.5)',
@@ -31,6 +32,8 @@ module.exports = {
         night: "url('https://images.unsplash.com/photo-1532767153582-b1a0e5145009?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')",
         sidebarLight: "url('https://i.postimg.cc/KvzvgYjM/contactbg.png')",
         sidebarDark: "url('https://i.postimg.cc/C5604j5f/contactbgdark.jpg')",
+        bgContact: "url('https://i.postimg.cc/T1gM6Cct/Testimonal.png')",
+        bgContactDark: "url('https://i.postimg.cc/BvTKj0n3/contact-Dark.jpg')",
       },
 
     },
