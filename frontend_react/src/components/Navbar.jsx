@@ -23,7 +23,7 @@ function Navbar({ toggleTheme, theme }) {
         <img src={logo} alt="logo" className="flex-1 object-cover max-w-[70px] max-h-[70px] shadow-primary shadow-sm rounded-full" />
       </a>
       <ul className="links hidden md:flex flex-1 justify-end items-center list-none text-base">
-        {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', <a href="https://www.dropbox.com/s/5arl2s285thrzej/Richard_Leung%20Woo-Gabriel_Resume.pdf?dl=0" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>,
+        {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', <a href="https://drive.google.com/file/d/1Ao2pGWNp7wgU9uFilX5GqzV5AJ85zBBd/view?usp=sharing" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>,
         ].map((item) => (
           <li key={item} className="flex flex-col mx-4 cursor-pointer justify-center items-center ">
             <motion.a
