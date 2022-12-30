@@ -60,14 +60,35 @@ function Projects() {
       >
         {projects.map((project, index) => (
           <motion.a
-            className=" cursor-pointer flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] relative rounded-lg shadow-lg overflow-hidden"
+            className="relative w-full  group cursor-pointer flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] rounded-lg shadow-lg overflow-hidden"
             href={project.link}
             target="_blank"
             rel="noreferrer"
-            whileHover={{ scale: 1.04 }}
             key={project.title + index}
           >
-            <img src={project.imgUrl} alt={project.title} className="flex rounded-lg object-cover" />
+            <img
+              src={project.imgUrl}
+              alt={project.title}
+              className="flex rounded-lg absolute object-cover w-full h-full inset-0 group-hover:opacity-10"
+            />
+            <div className="relative p-5">
+              <div className="mt-40">
+                <div className="transition-all transform
+                               translate-y-6 opacity-0
+                                group-hover:opacity-100
+                                group-hover:-translate-y-20 duration-1000"
+                >
+                  <div className="p-2">
+                    <div className="flex items-center justify-center">
+                      <div className=" w-12 h-0.5 bg-primary" />
+                      <p className="text-3xl text-black font-semibold">
+                        {project.title}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.a>
         ))}
 
