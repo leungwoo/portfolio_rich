@@ -1,5 +1,7 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import { useState } from 'react';
+/* eslint-disable consistent-return */
+/* eslint-disable no-console */
+import { useState, useRef, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/ti';
 import { ImGithub } from 'react-icons/im';
@@ -9,23 +11,49 @@ import { images } from '../constants';
 const { contactProject } = images;
 
 function ContactForm({ theme }) {
+  const [notification, setNotification] = useState('');
   const [formState, setFormState] = useState({
     name: '',
     email: '',
     message: '',
   });
+
+  const { name, email, message } = formState;
+
+  const form = useRef();
+
   const [loading, setLoading] = useState(false);
 
-  const { username, email, message } = formState;
-
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormState({ ...formState, [name]: value });
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+    console.log(formState);
   };
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (notification) {
+      const timer = setTimeout(() => {
+        setNotification('');
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [notification]);
+
+  const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
+    emailjs.sendForm('service_bkpc7ag', 'template_ophm5cg', form.current, 'qbFMLvC8bIjmsP9iB')
+      .then(() => {
+        setNotification('Email sent successfully');
+        setLoading(false);
+        setFormState({
+          name: '',
+          email: '',
+          message: '',
+        });
+      })
+      .catch(() => {
+        setNotification('Error sending email');
+      });
   };
 
   return (
@@ -61,22 +89,23 @@ function ContactForm({ theme }) {
         </div>
         <img src={contactProject} alt="contact" className=" object-cover max-h-[400px] md:max-h-[500px] rounded-full pb-5" />
       </div>
-      <form onSubmit={handleSubmit} className=" flex-1 mx-auto max-w-md mb-2">
+      <form onSubmit={sendEmail} ref={form} className=" flex-1 mx-auto max-w-md mb-2">
+        {notification && <div className="text-primary font-medium justify-center items-center">{notification}</div>}
         <div className="mb-4">
           <label
             htmlFor="name"
-            className="block  text-sm font-bold mb-2"
+            className="block text-sm font-bold mb-2"
           >
             Name
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleChange}
+              required
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
           </label>
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={handleChange}
-            required
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
         </div>
         <div className="mb-4">
           <label
@@ -84,15 +113,15 @@ function ContactForm({ theme }) {
             className="block text-sm font-bold mb-2"
           >
             Email
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleChange}
+              required
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
           </label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-            required
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
         </div>
         <div className="mb-4">
           <label
@@ -100,14 +129,15 @@ function ContactForm({ theme }) {
             className="block text-sm font-bold mb-2"
           >
             Message
+            <textarea
+              type="message"
+              name="message"
+              value={message}
+              onChange={handleChange}
+              required
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
+            />
           </label>
-          <textarea
-            name="message"
-            value={message}
-            onChange={handleChange}
-            required
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
-          />
         </div>
         <div className="flex items-center justify-between">
           <button
@@ -122,5 +152,4 @@ function ContactForm({ theme }) {
   );
 }
 export default ContactForm;
-// service_l9e6o0j
-// service_bkpc7ag
+

@@ -81,7 +81,7 @@ function Projects() {
                   <div className="p-2">
                     <div className="flex items-center justify-center">
                       <div className=" w-12 h-0.5 bg-primary" />
-                      <p className="text-3xl text-black font-semibold">
+                      <p className="text-3xl font-semibold">
                         {project.title}
                       </p>
                     </div>
