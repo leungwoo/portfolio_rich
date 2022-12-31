@@ -1,49 +1,49 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { useState } from 'react';
-import { BsFillMoonStarsFill } from 'react-icons/bs';
-import { HiMenu, HiX } from 'react-icons/hi';
+import React, { useState, useContext } from 'react';
+import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
+import { HiMenu } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
 import { images } from '../constants';
-import { Button } from './index';
+import { Sidebar } from './index';
+import { DarkModeContext } from '../App';
 
 const { logo } = images;
 
 function Navbar() {
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="appBar flex flex-row justify-between items-center px-4 py-8 w-full backdrop-blur-sm backdrop-filter z-0 fixed bg-gray-100">
-      <a href="#HOME" className="logo flex justify-start items-center ">
-        <img src={logo} alt="logo" className="object-cover max-w-[100px] max-h-[100px] shadow-primary shadow-md rounded-full" />
+    <nav
+      className="appBar flex flex-row justify-between items-center px-4 py-3 w-full backdrop-blur-sm backdrop-filter z-50 border-b-2 border-navbarborder md:border-transparent fixed dark:text-white"
+    >
+      <a
+        href="#HOME"
+        className="logo flex justify-start items-center "
+      >
+        <img src={logo} alt="logo" className="flex-1 object-cover max-w-[70px] max-h-[70px] shadow-primary shadow-sm rounded-full" />
       </a>
-      <ul className="links hidden md:flex flex-1 justify-center items-center font-burton list-none text-secondary text-base">
-        {['HOME', 'WORK', 'SKILLS', 'CONTACT', <Button btnName="RESUME" />, <BsFillMoonStarsFill />].map((item) => (
-          <li key={`link - ${item}`} className="flex flex-col mx-4 cursor-pointer justify-center items-center">
-            <a href={`#${item}`} className="flex flex-col font-medium no-underline hover:text-primary hover:animate-pulse transition-all duration-500 ease-in-out">{item}</a>
+      <ul className="links hidden md:flex flex-1 justify-end items-center list-none text-base">
+        {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', <a href="https://drive.google.com/file/d/1Ao2pGWNp7wgU9uFilX5GqzV5AJ85zBBd/view?usp=sharing" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>,
+        ].map((item) => (
+          <li key={item} className="flex flex-col mx-4 cursor-pointer justify-center items-center ">
+            <motion.a
+              whileHover={{ scale: 1.1, fontWeight: 'bold' }}
+              href={`#${item}`}
+              className="flex flex-col font-medium no-underline hover:text-primary hover:transition-all duration-500 ease-in-out"
+            >{item}
+            </motion.a>
           </li>
         ))}
       </ul>
+      <div className="cursor-pointer hover:text-primary hover:transition-all duration-500 ease-in-out ">
+        {darkMode ? <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} size={20} /> : <BsSunFill onClick={() => setDarkMode(!darkMode)} size={20} />}
+      </div>
 
       <div className="appBarMenu flex md:hidden w-[39px] h-[35px] justify-center items-center relative rounded-full bg-primary">
         <HiMenu className="text-white w-[70%] h-[70%] " onClick={() => setToggle(true)} />
-        {toggle
-        && (
-        <motion.div
-          className="z-20 top-0 bottom-0 right-0 p-4 w-[80%] h-screen flex flex-col justify-end items-end bg-repeat bg-cover bg-center bg-figma bg-white fixed "
-          whileInView={{ x: [300, 2] }}
-          transition={{ duration: 0.85, ease: 'easeOut' }}
-        >
-          <HiX onClick={() => setToggle(false)} className="w-[35px] h-[35px] text-primary" />
-          <ul className="links font-burton h-[100%] w-full list-none m-0 p-0 flex flex-col justify-start items-start ">
-            {['HOME', 'WORK', 'SKILLS', 'CONTACT', <Button btnName="RESUME" />, <BsFillMoonStarsFill />].map((item) => (
-              <li key={item} className="flex flex-col m-4 cursor-pointer text-secondary ">
-                <a href={`#${item}`} onClick={() => setToggle(false)} className="flex flex-col font-medium text-base no-underline hover:text-primary hover:animate-pulse transition-all duration-500 ease-in-out">{item}</a>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-        )}
+        <Sidebar setToggle={setToggle} toggle={toggle} />
       </div>
     </nav>
   );
