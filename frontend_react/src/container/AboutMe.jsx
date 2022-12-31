@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/ti';
-import { ImGithub } from 'react-icons/im';
+import { Icons } from '../components';
 
 const fadeIn = {
   hidden: {
@@ -42,18 +41,7 @@ function AboutMe() {
         Please feel free to reach out if you want to connect or just hangout and chat about technology over coffee.
       </p>
       <br />
-      <div className="flex flex-row items-center gap-4 pb-20">
-        <p className=" text-secondary">Feel free to reach out to me: </p>
-        <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.facebook.com/richard.l.gabriel.3/" target="_blank">
-          <TiSocialFacebookCircular size={35} />
-        </motion.a>
-        <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.linkedin.com/in/richard-leung-woo-gabriel-0b0822232/" target="_blank">
-          <TiSocialLinkedinCircular size={35} />
-        </motion.a>
-        <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://github.com/leungwoo" target="_blank">
-          <ImGithub size={30} />
-        </motion.a>
-      </div>
+      <Icons />
     </motion.div>
   );
 }

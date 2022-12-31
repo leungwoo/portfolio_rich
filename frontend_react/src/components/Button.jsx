@@ -3,10 +3,11 @@ import React from 'react';
 
 function Button({ btnName, btnColor }) {
   return (
-    <div
+    <button
+      type="button"
       className={`bg-${btnColor} text-white p-2 rounded-lg font-medium hover:bg-gradient-to-tl from-primary to-white hover:cursor-pointer`}
     >{btnName}
-    </div>
+    </button>
   );
 }
 

@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/ti';
-import { ImGithub } from 'react-icons/im';
 
 import { images } from '../constants';
+import { Icons } from '../components';
 
 const { carRental, musicApp, trainApp, movieApp } = images;
 
@@ -38,17 +37,7 @@ function Projects() {
             Welcome to my portfolio of projects built with demand technologies.
             In these projects, you will see how i have used these tools to build fast, responsive, and scalable web applications.
           </p>
-          <div className="flex flex-row justify-center items-center gap-4 pb-4 dark:text-white">
-            <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.facebook.com/richard.l.gabriel.3/" target="_blank">
-              <TiSocialFacebookCircular size={35} />
-            </motion.a>
-            <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.linkedin.com/in/richard-leung-woo-gabriel-0b0822232/" target="_blank">
-              <TiSocialLinkedinCircular size={35} />
-            </motion.a>
-            <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://github.com/leungwoo" target="_blank">
-              <ImGithub size={30} />
-            </motion.a>
-          </div>
+          <Icons />
         </div>
       </motion.div>
       <motion.div

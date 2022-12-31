@@ -2,11 +2,10 @@
 import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/ti';
-import { ImGithub } from 'react-icons/im';
 import { BiMailSend } from 'react-icons/bi';
 
 import { images } from '../constants';
+import { Icons } from '../components';
 
 const { contactProject } = images;
 
@@ -80,24 +79,14 @@ function ContactForm() {
             “Plan, take Massive Action and Fail Forward.  –Richard Leung Woo-Gabriel ”
           </span>
         </h1>
-        <div className="flex flex-row justify-center items-center gap-4 pb-10">
-          <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.facebook.com/richard.l.gabriel.3/" target="_blank">
-            <TiSocialFacebookCircular size={35} />
-          </motion.a>
-          <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.linkedin.com/in/richard-leung-woo-gabriel-0b0822232/" target="_blank">
-            <TiSocialLinkedinCircular size={35} />
-          </motion.a>
-          <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://github.com/leungwoo" target="_blank">
-            <ImGithub size={30} />
-          </motion.a>
-        </div>
+        <Icons />
         <img src={contactProject} alt="contact" className=" object-cover max-h-[400px] md:max-h-[500px] rounded-full pb-5" />
       </div>
-      <form onSubmit={sendEmail} ref={form} className=" flex-1 mx-auto max-w-md mb-2">
+      <form onSubmit={sendEmail} ref={form} className=" flex-1 flex flex-col gap-4">
         <div className="mb-4">
           <label
             htmlFor="name"
-            className="block text-sm font-bold mb-2"
+            className="block text-sm font-bold"
           >
             Name
             <input
@@ -113,7 +102,7 @@ function ContactForm() {
         <div className="mb-4">
           <label
             htmlFor="email"
-            className="block text-sm font-bold mb-2"
+            className="block text-sm font-bold"
           >
             Email
             <input
@@ -129,7 +118,7 @@ function ContactForm() {
         <div className="mb-4">
           <label
             htmlFor="message"
-            className="block text-sm font-bold mb-2"
+            className="block text-sm font-bold"
           >
             Message
             <textarea
@@ -142,7 +131,7 @@ function ContactForm() {
             />
           </label>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex justify-center items-center">
           <button
             type="submit"
             className="bg-primary text-white p-2 rounded-lg font-medium hover:bg-gradient-to-tl from-primary to-white hover:cursor-pointer"

@@ -46,53 +46,31 @@ function About() {
       >
         <div className="flex flex-col md:flex-row items-center flex-1 md:gap-2">
           <div className="flex w-[86px] h-0.5 bg-primary mb-2" />
-          <div className="flex text-[36px] md:text-[42px] font-medium gap-2 dark:text-white">
+          <div className="flex text-[32px] md:text-[42px] font-medium gap-2 dark:text-white">
             <span>My</span>
             <br />
             <span>Technologies</span>
           </div>
         </div>
-        <div className="items-center flex flex-row md:flex-col overflow-auto justify-start w-full">
-          <div className="flex flex-col max-h-[140px] md:flex-row justify-between items-center p-2 md:gap-10 gap-5 flex-1 ">
-            {firstList.map((about, index) => (
-              <motion.a
-                key={about.title + index}
-                whileHover={{ scale: 1.1 }}
-                href={about.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div className=" text-base font-medium justify-between items-center ">
-                  <img
-                    className="shadow-md shadow-primary w-11 h-11 md:w-10 md:h-10 object-cover items-center rounded-full mb-2"
-                    src={urlFor(about.imgUrl)}
-                    alt={about.title}
-                  />
-                  {about.title}
-                </div>
-              </motion.a>
-            ))}
-          </div>
-          <div className="flex flex-col max-h-[140px] md:flex-row justify-between items-center p-2 md:gap-10 gap-5 flex-1">
-            {secondList.map((about, index) => (
-              <motion.a
-                key={about.title + index}
-                whileHover={{ scale: 1.1 }}
-                href={about.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div className=" text-base font-medium justify-between items-center ">
-                  <img
-                    className="shadow-md shadow-primary w-11 h-11 md:w-10 md:h-10 object-cover items-center rounded-full mb-2"
-                    src={urlFor(about.imgUrl)}
-                    alt={about.title}
-                  />
-                  {about.title}
-                </div>
-              </motion.a>
-            ))}
-          </div>
+        <div className="items-center flex flex-wrap overflow-auto justify-around gap-2 pt-2 px-4 w-full">
+          {abouts.map((about, index) => (
+            <motion.a
+              key={about.title + index}
+              whileHover={{ scale: 1.1 }}
+              href={about.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className=" text-base font-medium justify-between items-center ">
+                <img
+                  className="shadow-md shadow-primary w-11 h-11 md:w-10 md:h-10 object-cover items-center rounded-full mb-2"
+                  src={urlFor(about.imgUrl)}
+                  alt={about.title}
+                />
+                {about.title}
+              </div>
+            </motion.a>
+          ))}
         </div>
       </motion.div>
       <motion.div
