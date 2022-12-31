@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
 import { ImGithub } from 'react-icons/im';
 import { images } from '../constants';
 
-function Header({ theme }) {
+function Header() {
   return (
     <div
       id="HOME"
-      className={`md:h-viewport-height lg:pt-[96px]
-       ${theme === 'light' ? 'md:bg-backgroundImgLg && bg-backgroundImgSm' : 'md:bg-backgroundImgLgDark && bg-backgroundImgSmDark'} bg-bottom bg-no-repeat md:bg-headerbg md:bg-cover md:bg-repeat`}
+      className="md:h-viewport-height lg:pt-[96px]
+       md:bg-backgroundImgLg bg-backgroundImgSm dark:md:bg-backgroundImgLgDark dark:bg-backgroundImgSmDark bg-bottom bg-no-repeat md:bg-headerbg md:bg-cover md:bg-repeat dark:bg-black"
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -21,7 +21,7 @@ function Header({ theme }) {
         <div className=" flex-1  mx-auto md:ml-30 md:justify-center ">
           <img src={images.richard} alt="richard" className="md:mx-auto" />
         </div>
-        <div className="flex-1  px-10 justify-center items-center">
+        <div className="flex-1  px-10 justify-center items-center dark:text-white">
           <div className="font-medium text-[42px] pb-5 md:text-7xl">An Interactive Designer</div>
           <p className="font-normal text-base pb-5 text-secondary">Software Engineer with a passion for building clean modern and scaleable user interfaces. Lets collaborate and do something great. </p>
 

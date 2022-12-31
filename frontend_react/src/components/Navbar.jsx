@@ -1,20 +1,22 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
 import { HiMenu } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
 import { images } from '../constants';
 import { Sidebar } from './index';
+import { DarkModeContext } from '../App';
 
 const { logo } = images;
 
-function Navbar({ toggleTheme, theme }) {
+function Navbar() {
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
   const [toggle, setToggle] = useState(false);
 
   return (
     <nav
-      className="appBar flex flex-row justify-between items-center px-4 py-3 w-full backdrop-blur-sm backdrop-filter z-50 border-b-2 border-navbarborder md:border-transparent fixed"
+      className="appBar flex flex-row justify-between items-center px-4 py-3 w-full backdrop-blur-sm backdrop-filter z-50 border-b-2 border-navbarborder md:border-transparent fixed dark:text-white"
     >
       <a
         href="#HOME"
@@ -35,13 +37,13 @@ function Navbar({ toggleTheme, theme }) {
           </li>
         ))}
       </ul>
-      <div>
-        {theme === 'light' ? <BsFillMoonStarsFill onClick={toggleTheme} size={20} /> : <BsSunFill onClick={toggleTheme} size={20} color="yellow" />}
+      <div className="cursor-pointer hover:text-primary hover:transition-all duration-500 ease-in-out ">
+        {darkMode ? <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} size={20} /> : <BsSunFill onClick={() => setDarkMode(!darkMode)} size={20} />}
       </div>
 
       <div className="appBarMenu flex md:hidden w-[39px] h-[35px] justify-center items-center relative rounded-full bg-primary">
         <HiMenu className="text-white w-[70%] h-[70%] " onClick={() => setToggle(true)} />
-        <Sidebar setToggle={setToggle} toggle={toggle} toggleTheme={toggleTheme} theme={theme} />
+        <Sidebar setToggle={setToggle} toggle={toggle} />
       </div>
     </nav>
   );

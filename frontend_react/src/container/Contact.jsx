@@ -1,16 +1,16 @@
 /* eslint-disable consistent-return */
-/* eslint-disable no-console */
 import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { TiSocialLinkedinCircular, TiSocialFacebookCircular } from 'react-icons/ti';
 import { ImGithub } from 'react-icons/im';
+import { BiMailSend } from 'react-icons/bi';
 
 import { images } from '../constants';
 
 const { contactProject } = images;
 
-function ContactForm({ theme }) {
+function ContactForm() {
   const [notification, setNotification] = useState('');
   const [formState, setFormState] = useState({
     name: '',
@@ -26,7 +26,6 @@ function ContactForm({ theme }) {
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
-    console.log(formState);
   };
 
   useEffect(() => {
@@ -43,7 +42,12 @@ function ContactForm({ theme }) {
     setLoading(true);
     emailjs.sendForm('service_bkpc7ag', 'template_ophm5cg', form.current, 'qbFMLvC8bIjmsP9iB')
       .then(() => {
-        setNotification('Email sent successfully');
+        setNotification(
+          <div>
+            <BiMailSend size={30} color="#5D3BEE" />
+            <span>Email sent successfully</span>
+          </div>,
+        );
         setLoading(false);
         setFormState({
           name: '',
@@ -63,8 +67,8 @@ function ContactForm({ theme }) {
       hidden={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.25 }}
       id="CONTACT"
-      className={`flex flex-col md:flex-row md:h-viewport-height pt-[110px] md:gap-20 md:px-[100px] lg:px-[200px] px-5  overflow-y-auto
-       ${theme === 'light' ? 'bg-bgContact' : 'bg-bgContactDark'} bg-center bg-no-repeat bg-cover`}
+      className="flex flex-col md:flex-row md:h-viewport-height pt-[110px] md:gap-20 md:px-[100px] lg:px-[200px] px-5 overflow-y-auto
+       bg-bgContact dark:bg-bgContactDark bg-center bg-no-repeat bg-cover dark:text-white"
     >
       <div className="flex-1 justify-center items-center">
         <div className="flex flex-col md:flex-row justify-center items-center md:gap-2">
@@ -90,7 +94,6 @@ function ContactForm({ theme }) {
         <img src={contactProject} alt="contact" className=" object-cover max-h-[400px] md:max-h-[500px] rounded-full pb-5" />
       </div>
       <form onSubmit={sendEmail} ref={form} className=" flex-1 mx-auto max-w-md mb-2">
-        {notification && <div className="text-primary font-medium justify-center items-center">{notification}</div>}
         <div className="mb-4">
           <label
             htmlFor="name"
@@ -147,6 +150,7 @@ function ContactForm({ theme }) {
             {!loading ? 'Send Message' : 'Sending....'}
           </button>
         </div>
+        {notification && <div className="text-primary font-medium justify-center items-center mt-2">{notification}</div>}
       </form>
     </motion.div>
   );

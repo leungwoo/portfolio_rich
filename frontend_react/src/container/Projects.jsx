@@ -18,7 +18,7 @@ function Projects() {
   return (
     <div
       id="PROJECTS"
-      className="bg-gradient-to-tr from-primary to-skills md:h-viewport-height pt-[110px] overflow-y-auto"
+      className="bg-gradient-to-tr from-primary to-skills dark:bg-gradient-to-tr dark:from-primary dark:to-black md:h-viewport-height pt-[110px] overflow-y-auto dark:text-white"
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -38,7 +38,7 @@ function Projects() {
             Welcome to my portfolio of projects built with demand technologies.
             In these projects, you will see how i have used these tools to build fast, responsive, and scalable web applications.
           </p>
-          <div className="flex flex-row justify-center items-center gap-4 pb-4">
+          <div className="flex flex-row justify-center items-center gap-4 pb-4 dark:text-white">
             <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.facebook.com/richard.l.gabriel.3/" target="_blank">
               <TiSocialFacebookCircular size={35} />
             </motion.a>

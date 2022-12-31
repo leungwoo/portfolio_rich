@@ -47,12 +47,12 @@ const listVariant = {
   },
 };
 
-function Sidebar({ setToggle, toggle, theme }) {
+function Sidebar({ setToggle, toggle }) {
   return (
     <AnimatePresence>
       <motion.div
-        className={`container rounded-tl-3xl z-20 top-0 bottom-0 right-0 p-4 w-[50%] h-screen flex flex-col
-         ${theme === 'light' ? 'bg-sidebarLight' : 'bg-sidebarDark'} justify-end items-end bg-cover bg-no-repeat bg-center bg-figma bg-white fixed`}
+        className="container rounded-tl-3xl z-20 top-0 bottom-0 right-0 p-4 w-[50%] h-screen flex flex-col
+         bg-sidebarLight dark:bg-sidebarDark justify-end items-end bg-cover bg-no-repeat bg-center bg-figma bg-white fixed"
         animate={toggle ? 'open' : 'closed'}
         initial="hidden"
         exit="exit"
@@ -66,7 +66,7 @@ function Sidebar({ setToggle, toggle, theme }) {
             <motion.li
               variants={listVariant}
               key={item}
-              className={`flex flex-col m-4 cursor-pointer border border-transparent p-2 rounded-lg bg-primary ${theme === 'light' ? 'text-white' : 'text-white'} `}
+              className="flex flex-col m-4 cursor-pointer border border-transparent p-2 rounded-lg bg-primary text-white"
             >
               <a
                 href={`#${item}`}
