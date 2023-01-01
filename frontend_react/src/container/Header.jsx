@@ -20,11 +20,13 @@ function Header() {
         <div className=" flex-1  mx-auto md:ml-30 md:justify-center ">
           <img src={images.richard} alt="richard" className="md:mx-auto" />
         </div>
-        <div className="flex-1  px-10 justify-center items-center dark:text-white">
-          <div className="font-medium text-[42px] pb-5 md:text-7xl">An Interactive Designer</div>
-          <p className="font-normal text-base pb-5 text-secondary">Software Engineer with a passion for building clean modern and scaleable user interfaces. Lets collaborate and do something great. </p>
+        <div className="flex-1  px-10 justify-center items-center dark:text-white space-y-4">
+          <div className="font-medium text-[42px] md:text-7xl">An Interactive Designer</div>
+          <p className="font-normal text-base"> A Software Engineer with a passion for building clean, modern, and scalable user interfaces.
+            Let&apos;s collaborate and create something truly great.
+          </p>
 
-          <h1 className="hidden md:flex">
+          <div>
             <span className="py-5 text-secondary font-bold italic">
               <Typewriter
                 words={['“Simplicity is the soul of efficiency. – Austin Freeman”', '“Make it work, make it right, make it fast.  – Kent Beck”', '“First, solve the problem. Then, write the code.  – John Johnson” ']}
@@ -36,8 +38,8 @@ function Header() {
                 delaySpeed={1000}
               />
             </span>
-          </h1>
-          <div className="flex gap-4 items-center md:pt-5 pb-5">
+          </div>
+          <div className="flex gap-4 items-center md:pt-5">
             <a href="#CONTACT">
               <button type="button" className="bg-primary text-white p-2 rounded-lg font-medium hover:bg-gradient-to-tl from-primary to-white hover:cursor-pointer">
                 Send Message
