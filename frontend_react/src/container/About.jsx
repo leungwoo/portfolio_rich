@@ -18,11 +18,6 @@ function About() {
   const [abouts, setAbouts] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
 
-  const firstList = [...abouts];
-  const secondList = [...abouts];
-  firstList.splice(0, abouts.length / 2);
-  secondList.splice(abouts.length / 2, abouts.length - 1);
-
   const handleClick = (title) => {
     setSelectedItem(title);
   };
@@ -53,7 +48,7 @@ function About() {
         <div className="items-center flex flex-wrap justify-around gap-2 pt-2 px-4 w-full">
           {abouts.map((about, index) => (
             <motion.a
-              key={about.title + index}
+              key={index}
               whileHover={{ scale: 1.1 }}
               href={about.link}
               target="_blank"
