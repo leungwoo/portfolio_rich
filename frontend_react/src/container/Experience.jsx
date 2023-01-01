@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { Icons } from '../components';
+import { urlFor, client } from '../client';
 
 function Experience() {
+  const [workExperience, setWorkExperience] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "workExperience"]';
+    client.fetch(query).then((data) => setWorkExperience(data));
+  }, []);
+
   const fadeIn = {
     hidden: {
       opacity: 0,
@@ -27,17 +35,17 @@ function Experience() {
       <div className="flex flex-row items-center justify gap-2">
         <h1 className="text-2xl">Experience</h1><div className="w-[50px] h-0.5 bg-primary" />
       </div>
-      <p className="pt-5">Hi my name is Richard Leung Woo-Gabriel. I am a Full Stack Web Developer.
-        I currently work remote as software engineer and have always had a passion for problem solving.
-        I have a strong background in front end development and built experience with a variety of technologies.
-      </p>
-      <br />
-      <p>
-        Discipline and work ethic have been my strong points and belief to accomplish any task i undertake. Patience has been a key asset of mine when working with teams and accomplishing projects.
-        Besides my passion for software development i enjoy competitive sports and visiting new places with my family.
-        Please feel free to reach out if you want to connect or know about any interesting hiring opporitunities.
-      </p>
-      <br />
+      {workExperience.map((work, index) => (
+        <div
+          className="flex flex-col justify-center items-center gap-4 py-6"
+          key={index}
+        >
+          <img src={urlFor(work.imgUrl)} alt={work.name} className="w-11 h-11 rounded-full" />
+          <div className="font-bold justify-center items-center">{work.company}</div>
+          <div className="font-bold text-secondary">{work.name}</div>
+          <p>{work.desc}</p>
+        </div>
+      ))}
       <Icons />
     </motion.div>
   );

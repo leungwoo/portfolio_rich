@@ -16,6 +16,15 @@ export default {
                 name:'desc',
                 title:'Desc',
                 type:'string'
+            },
+            {
+                name:'imgUrl',
+            title:'ImgUrl',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
             }
     ]
+    
 }
