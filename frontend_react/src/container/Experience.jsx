@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -7,7 +6,7 @@ import { urlFor, client } from '../client';
 
 function Experience() {
   const [workExperience, setWorkExperience] = useState([]);
-  console.log(workExperience);
+
   useEffect(() => {
     const query = '*[_type == "workExperience"]';
     client.fetch(query).then((data) => setWorkExperience(data));
