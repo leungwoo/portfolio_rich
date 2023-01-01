@@ -7,7 +7,7 @@ function Icons() {
   return (
     <div className="flex flex-row items-center gap-4 pb-4">
       <p className="flex text-secondary">Let&apos;s Connect: </p>
-      <div className="flex flex-row">
+      <div className="flex flex-row gap-4">
         <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.facebook.com/richard.l.gabriel.3/" target="_blank">
           <TiSocialFacebookCircular size={35} />
         </motion.a>
