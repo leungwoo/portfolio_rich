@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { Icons } from '../components';
+import { urlFor, client } from '../client';
 
 function Testimonials() {
+  const [testimonials, setTestimonials] = useState([]);
+  const [expandedId, setExpandedId] = useState(null);
+
+  useEffect(() => {
+    const query = '*[_type == "testimonials"]';
+    client.fetch(query).then((data) => setTestimonials(data));
+  }, []);
+
+  const handleClick = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
   const fadeIn = {
     hidden: {
       opacity: 0,
@@ -23,23 +35,31 @@ function Testimonials() {
       variants={fadeIn}
       initial="hidden"
       animate="show"
-      className="flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-y-auto px-5"
+      className="flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-y-auto px-4"
     >
-      <div className="flex flex-row items-center justify gap-2">
+      <div className="flex flex-row items-center justify gap-2 mb-4">
         <h1 className="text-2xl">Testimonials</h1><div className="w-[50px] h-0.5 bg-primary" />
       </div>
-      <p className="pt-5">Hi my name is Richard Leung Woo-Gabriel. I am a Full Stack Web Developer.
-        I currently work remote as software engineer and have always had a passion for problem solving.
-        I have a strong background in front end development and built experience with a variety of technologies.
-      </p>
-      <br />
-      <p>
-        Discipline and work ethic have been my strong points and belief to accomplish any task i undertake. Patience has been a key asset of mine when working with teams and accomplishing projects.
-        Besides my passion for software development i enjoy competitive sports and visiting new places with my family.
-        Please feel free to reach out if you want to connect or know about any interesting hiring opporitunities.
-      </p>
-      <br />
-      <Icons />
+      {testimonials.map((testimonial, id) => (
+        <div key={id}>
+          <div
+            className="rounded-lg hover:shadow-secondary shadow-md hover:shadow-lg dark:hover:shadow-primary transition-all duration-200 flex flex-col justify-center items-center py-4"
+          >
+            <img src={urlFor(testimonial.imgurl)} alt={testimonial.name} className="bg-backgroundImgSm bg-contain dark:bg-backgroundImgSmDark w-40 rounded-full" />
+            <p className="font-bold text-lg mb-2">{testimonial.name} </p>
+            <p className="font-bold text-base">{testimonial.company}</p>
+            <motion.div
+              onClick={() => handleClick(id)}
+              className="cursor-pointer mb-2"
+              whileHover={{ scale: 1.1 }}
+            > says...
+            </motion.div>
+            <div className=" px-4">
+              {expandedId === id && (<div className="text-base">{testimonial.feedback}</div>)}
+            </div>
+          </div>
+        </div>
+      ))}
     </motion.div>
   );
 }
