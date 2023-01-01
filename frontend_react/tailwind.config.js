@@ -10,7 +10,6 @@ module.exports = {
       height: {
         'viewport-height': 'calc(min(100vh))',
       },
-
       fontFamily: {
         primary: ['Bitter', 'serif'],
       },

@@ -1,8 +1,10 @@
+/* eslint-disable no-shadow */
 /* eslint-disable consistent-return */
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import { BiMailSend } from 'react-icons/bi';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { images } from '../constants';
 import { Icons } from '../components';
@@ -10,7 +12,7 @@ import { Icons } from '../components';
 const { contactProject } = images;
 
 function ContactForm() {
-  const [notification, setNotification] = useState('');
+  // const [notification, setNotification] = useState('');
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -27,26 +29,38 @@ function ContactForm() {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {
-    if (notification) {
-      const timer = setTimeout(() => {
-        setNotification('');
-      }, 5000);
-      return () => clearTimeout(timer);
+  const notify = (message, hasError = false) => {
+    if (hasError) {
+      toast.error(message, {
+        postion: 'top-center',
+        autoClose: 2500,
+        hideProgressBar: 'false',
+        closeOnClick: 'true',
+        pauseOnHover: 'true',
+        draggable: 'true',
+        progress: undefined,
+        className: 'border-b-2 border-primary text-primary ',
+      });
+    } else {
+      toast.success(message, {
+        postion: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: 'false',
+        closeOnClick: 'true',
+        pauseOnHover: 'true',
+        draggable: 'true',
+        progress: undefined,
+        className: 'border-b-2 border-primary text-primary ',
+      });
     }
-  }, [notification]);
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
     emailjs.sendForm('service_bkpc7ag', 'template_ophm5cg', form.current, 'qbFMLvC8bIjmsP9iB')
       .then(() => {
-        setNotification(
-          <div>
-            <BiMailSend size={30} color="#5D3BEE" />
-            <span>Email sent successfully</span>
-          </div>,
-        );
+        notify('Email sent successfully', false);
         setLoading(false);
         setFormState({
           name: '',
@@ -55,7 +69,7 @@ function ContactForm() {
         });
       })
       .catch(() => {
-        setNotification('Error sending email');
+        notify('Error sending email', true);
       });
   };
 
@@ -131,7 +145,7 @@ function ContactForm() {
             />
           </label>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center pb-4">
           <button
             type="submit"
             className="bg-primary text-white p-2 rounded-lg font-medium hover:bg-gradient-to-tl from-primary to-white hover:cursor-pointer"
@@ -139,7 +153,7 @@ function ContactForm() {
             {!loading ? 'Send Message' : 'Sending....'}
           </button>
         </div>
-        {notification && <div className="text-primary font-medium justify-center items-center mt-2">{notification}</div>}
+        <ToastContainer />
       </form>
     </motion.div>
   );

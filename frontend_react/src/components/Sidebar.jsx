@@ -62,7 +62,7 @@ function Sidebar({ setToggle, toggle }) {
         <ul
           className="links  h-screen w-full list-none m-0 p-0 flex flex-col justify-start items-start "
         >
-          {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', 'RESUME'].map((item) => (
+          {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', <a href="https://drive.google.com/file/d/1Ao2pGWNp7wgU9uFilX5GqzV5AJ85zBBd/view?usp=sharing" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>].map((item) => (
             <motion.li
               variants={listVariant}
               key={item}

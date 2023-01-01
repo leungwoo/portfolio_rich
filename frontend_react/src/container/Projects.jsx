@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import { images } from '../constants';
-import { Icons } from '../components';
 
 const { carRental, musicApp, trainApp, movieApp } = images;
 
@@ -34,10 +33,9 @@ function Projects() {
         </div>
         <div className="flex-1 ">
           <p className="flex-1 text-base md:text-lg font-normal mb-2">
-            Welcome to my portfolio of projects built with demand technologies.
-            In these projects, you will see how i have used these tools to build fast, responsive, and scalable web applications.
+            Explore my portfolio of cutting-edge projects built with the latest technologies.
+            In these projects, you&apos;ll see how I&apos;ve used these tools to create fast, responsive, and scalable web applications that deliver a seamless user experience.
           </p>
-          <Icons />
         </div>
       </motion.div>
       <motion.div
@@ -80,7 +78,6 @@ function Projects() {
             </div>
           </motion.a>
         ))}
-
       </motion.div>
     </div>
   );

@@ -7,7 +7,7 @@ const { logo } = images;
 
 function Footer() {
   return (
-    <div className="flex flex-col items-center justify-center mt-5">
+    <div className="flex flex-col items-center justify-center pt-2 dark:bg-black dark:text-white">
       <div className="flex flex-col items-center justify-between mb-4">
         <img src={logo} alt="logo" className="flex-1 object-cover mb-4 max-w-[70px] max-h-[70px] shadow-primary shadow-sm rounded-full" />
         <ul className="md:flex flex-1 justify-end items-center list-none text-base">
@@ -25,7 +25,7 @@ function Footer() {
         </ul>
       </div>
       <div className=" justify-center items-center">
-        <div className="mx-[50px] h-0.5 bg-primary mb-2" />
+        <div className="mx-[50px] h-1 bg-primary mb-2" />
         <p className="text-footer text-sm md:text-base">©RichardLeungWooGabriel 2022.
           All rights reserved.
         </p>
