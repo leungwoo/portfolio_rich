@@ -50,7 +50,7 @@ function About() {
             <span>Technologies</span>
           </div>
         </div>
-        <div className="items-center flex flex-wrap overflow-auto justify-around gap-2 pt-2 px-4 w-full">
+        <div className="items-center flex flex-wrap justify-around gap-2 pt-2 px-4 w-full">
           {abouts.map((about, index) => (
             <motion.a
               key={about.title + index}
