@@ -9,7 +9,7 @@ function Header() {
   return (
     <div
       id="HOME"
-      className="md:h-viewport-height lg:pt-[96px]
+      className="md:h-viewport-height lg:pt-[96px] pb-4
        md:bg-backgroundImgLg bg-backgroundImgSm dark:md:bg-backgroundImgLgDark dark:bg-backgroundImgSmDark bg-bottom bg-no-repeat md:bg-headerbg md:bg-cover md:bg-repeat dark:bg-black"
     >
       <motion.div

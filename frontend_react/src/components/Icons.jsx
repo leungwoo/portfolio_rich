@@ -5,7 +5,7 @@ import { TiSocialFacebookCircular, TiSocialLinkedinCircular } from 'react-icons/
 
 function Icons() {
   return (
-    <div className="flex flex-row items-center gap-4 pb-10">
+    <div className="flex flex-row items-center gap-4 pb-4">
       <p className="flex text-secondary">Let&apos;s Connect: </p>
       <div className="flex flex-row">
         <motion.a whileHover={{ scale: 1.1 }} className="hover:shadow-primary shadow-md rounded-full" href="https://www.facebook.com/richard.l.gabriel.3/" target="_blank">

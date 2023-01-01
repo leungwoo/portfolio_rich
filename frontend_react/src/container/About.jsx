@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import images from '../constants/images';
 import { urlFor, client } from '../client';
 import { AboutMe, Experience, Testimonials } from './index';
-import { Icons } from '../components';
 
 const { meAnimated, coding, thumbs, experience } = images;
 
@@ -34,7 +33,6 @@ function About() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: [0, 1] }}
-        hidden={{ opacity: 1 }}
         viewport={{ once: false, amount: 0.25 }}
         className="flex flex-col pb-5 lg:flex-row md:px-[100px] lg:px-[200px] justify-evenly items-center gap-10 md:gap-20 z-0"
       >
@@ -87,9 +85,6 @@ function About() {
               <img src={item.imgUrl} alt={item.title} className="md:w-10 md:h-10 w-8 h-8 object-contain" />
             </div>
           ))}
-          <div className="flex justify-center items-center">
-            <Icons />
-          </div>
         </div>
         <div className="flex-1 justify-center items-center">
           {selectedItem === null ? <img src={coding} className="w-full object-cover max-h-[400px] rounded-full" /> : null}
