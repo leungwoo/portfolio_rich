@@ -26,7 +26,7 @@ function Testimonials() {
       x: 0,
       transition: {
         type: 'spring',
-        duration: 1,
+        duration: 2,
         ease: 'linear',
       },
     },
@@ -45,13 +45,14 @@ function Testimonials() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: [0, 1] }}
-          viewport={{ once: false, amount: 0.35 }}
+          viewport={{ once: false, amount: 0.30 }}
           key={id}
         >
           <div
-            className=" shadow-md hover:shadow-lg dark:shadow-md dark:hover:shadow-lg dark:hover:shadow-primary transition-all duration-1000 flex flex-col justify-center items-center py-4"
+            className="bg-backgroundImgContact dark:bg-backgroundImgContactDark bg-contain bg-no-repeat
+            shadow-md hover:shadow-lg dark:shadow-md dark:hover:shadow-lg dark:hover:shadow-primary transition-all duration-1000  flex flex-col justify-center items-center py-4"
           >
-            <img src={urlFor(testimonial.imgurl)} alt={testimonial.name} className="bg-backgroundImgSm bg-contain dark:bg-backgroundImgSmDark w-40 rounded-full" />
+            <img src={urlFor(testimonial.imgurl)} alt={testimonial.name} className="w-40 rounded-full" />
             <p className="font-bold text-lg mb-2">{testimonial.name} </p>
             <p className="font-bold text-secondary text-base">{testimonial.company}</p>
             <motion.div
@@ -61,7 +62,15 @@ function Testimonials() {
             >{expandedId === id ? <BsFillArrowUpCircleFill size={20} /> : <BsFillArrowDownCircleFill size={20} />}
             </motion.div>
             <div className=" px-4">
-              {expandedId === id && (<div className="text-base">{testimonial.feedback}</div>)}
+              {expandedId === id && (
+              <motion.div
+                variants={fadeIn}
+                initial="hidden"
+                animate="show"
+                className="text-base "
+              >{testimonial.feedback}
+              </motion.div>
+              )}
             </div>
           </div>
         </motion.div>

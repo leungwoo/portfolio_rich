@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { Icons } from '../components';
 import { urlFor, client } from '../client';
+import { Icons } from '../components';
 
 function Experience() {
   const [workExperience, setWorkExperience] = useState([]);
@@ -15,13 +15,13 @@ function Experience() {
   const fadeIn = {
     hidden: {
       opacity: 0,
-      y: 100 },
+      y: -100 },
     show: {
       opacity: 1,
       y: 0,
       transition: {
         type: 'spring',
-        duration: 1,
+        duration: 2,
         ease: 'linear' } },
   };
 

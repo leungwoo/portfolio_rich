@@ -13,7 +13,7 @@ const fadeIn = {
     y: 0,
     transition: {
       type: 'spring',
-      duration: 1,
+      duration: 2,
       ease: 'linear',
     },
   },

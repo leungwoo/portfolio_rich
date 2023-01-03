@@ -1,5 +1,8 @@
 import logo from '../assets/Richard Leung woo Gabriel.png';
 import logo2 from '../assets/Richard_Leung_woo_Gabriel-removebg-preview.png';
+import logo3 from '../assets/rlwgNB.png';
+import logo3D from '../assets/rlwg3D.png';
+
 import richard from '../assets/richardnobg.png';
 import smHeaderBg from '../assets/bg-1.png';
 import smHeaderBgDark from '../assets/bg-1-bl.jpg';
@@ -27,6 +30,8 @@ import contactProject from '../assets/contactProject.jpg';
 export default {
   logo,
   logo2,
+  logo3,
+  logo3D,
   richard,
   smHeaderBg,
   smHeaderBgDark,
