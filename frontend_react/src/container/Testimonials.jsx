@@ -37,7 +37,7 @@ function Testimonials() {
       variants={fadeIn}
       initial="hidden"
       animate="show"
-      className=" flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-auto py-8 px-4"
+      className=" flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-auto py-8 px-4 dark:bg-opacity-10 dark:bg-white dark:backdrop-blur-lg rounded-lg"
     >
       <div className="flex flex-row items-center justify gap-2 mb-4">
         <h1 className="text-2xl">Testimonials</h1><div className="w-[50px] h-0.5 bg-primary" />
@@ -46,12 +46,11 @@ function Testimonials() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: [0, 1] }}
-          viewport={{ once: false, amount: 0.30 }}
+          viewport={{ once: false, amount: 0.35 }}
           key={id}
         >
           <div
-            className="bg-backgroundImgContact dark:bg-backgroundImgContactDark bg-contain bg-no-repeat
-            shadow-md hover:shadow-lg dark:shadow-md dark:hover:shadow-lg dark:hover:shadow-primary transition-all duration-1000  flex flex-col justify-center items-center py-4"
+            className="shadow-md hover:shadow-lg dark:shadow-md dark:hover:shadow-sm dark:hover:shadow-primary transition-all duration-1000  flex flex-col justify-center items-center py-4"
           >
             <img src={urlFor(testimonial.imgurl)} alt={testimonial.name} className="w-40 rounded-full" />
             <p className="font-bold text-lg mb-2">{testimonial.name} </p>

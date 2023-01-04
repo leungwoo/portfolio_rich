@@ -30,7 +30,7 @@ function Experience() {
       variants={fadeIn}
       initial="hidden"
       animate="show"
-      className="flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-y-auto px-5"
+      className="flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-y-auto py-8 px-5 dark:bg-opacity-10 dark:bg-white dark:backdrop-blur-lg rounded-lg"
     >
       <div className="flex flex-row items-center justify gap-2">
         <h1 className="text-2xl">Experience</h1><div className="w-[50px] h-0.5 bg-primary" />

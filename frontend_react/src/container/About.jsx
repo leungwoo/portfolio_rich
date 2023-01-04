@@ -29,7 +29,7 @@ function About() {
   }, []);
 
   return (
-    <div id="ABOUT" className="md:h-viewport-height pt-[110px] overflow-y-auto dark:bg-black dark:text-white">
+    <div id="ABOUT" className="md:h-viewport-height pt-[110px] overflow-y-auto dark:bg-backgroundHeaderDark2 bg-no-repeat bg-cover bg-center dark:text-white">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: [0, 1] }}
@@ -77,8 +77,8 @@ function About() {
             <div
               key={index}
               onClick={() => handleClick(item.title)}
-              className="flex flex-row md:flex-col my-4 md:p-4 p-2 bg-skills shadow-2xl blur-9 cursor-pointer rounded-full justify-evenly items-center z-0 hover:transition-all duration-500 ease-in-out
-               hover:shadow-lg dark:hover:shadow-primary dark:bg-white dark:backdrop-blur-lg dark:bg-opacity-10"
+              className="flex flex-row md:flex-col my-4 md:p-4 p-2 bg-skills shadow-2xl blur-9 cursor-pointer rounded-full justify-evenly items-center z-0 hover:transition-all duration-1000 ease-in-out
+               hover:shadow-md dark:hover:shadow-primary dark:bg-white dark:backdrop-blur-lg dark:bg-opacity-10"
             >
               <div className="text-2xl md:text-3xl text-secondary dark:text-white">
                 {item.title}
