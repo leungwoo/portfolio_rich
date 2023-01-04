@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { BsFillArrowUpCircleFill, BsFillArrowDownCircleFill } from 'react-icons/bs';
+import { ImQuotesLeft } from 'react-icons/im';
 
 import { urlFor, client } from '../client';
 
@@ -63,13 +64,16 @@ function Testimonials() {
             </motion.div>
             <div className=" px-4">
               {expandedId === id && (
-              <motion.div
-                variants={fadeIn}
-                initial="hidden"
-                animate="show"
-                className="text-base "
-              >{testimonial.feedback}
-              </motion.div>
+                <>
+                  <ImQuotesLeft size={30} className="text-primary mb-2" />
+                  <motion.div
+                    variants={fadeIn}
+                    initial="hidden"
+                    animate="show"
+                    className="text-base "
+                  >{testimonial.feedback}
+                  </motion.div>
+                </>
               )}
             </div>
           </div>

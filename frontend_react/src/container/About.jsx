@@ -44,7 +44,7 @@ function About() {
             <span>Technologies</span>
           </div>
         </div>
-        <div className="items-center flex flex-wrap justify-around gap-2 pt-2 px-4 w-full">
+        <div className="items-center flex flex-wrap justify-center gap-2 pt-2 px-4 w-full">
           {abouts.map((about, index) => (
             <motion.a
               key={index}
@@ -53,9 +53,9 @@ function About() {
               target="_blank"
               rel="noreferrer"
             >
-              <div className=" text-base font-medium justify-between items-center ">
+              <div className=" text-base font-medium justify-around items-center ">
                 <img
-                  className="shadow-md shadow-primary w-11 h-11 md:w-10 md:h-10 object-cover items-center rounded-full mb-2"
+                  className="shadow-md shadow-primary w-11 h-11 md:w-10 md:h-10 object-cover justify-center mx-auto items-center rounded-full mb-2"
                   src={urlFor(about.imgUrl)}
                   alt={about.title}
                 />
@@ -77,7 +77,8 @@ function About() {
             <div
               key={index}
               onClick={() => handleClick(item.title)}
-              className="flex flex-row md:flex-col my-4 md:p-4 p-2 bg-skills dark:bg-secondary cursor-pointer rounded-full justify-evenly items-center z-0 hover:bg-gradient-to-tl from-primary to-white"
+              className="flex flex-row md:flex-col my-4 md:p-4 p-2 bg-skills shadow-2xl blur-9 cursor-pointer rounded-full justify-evenly items-center z-0 hover:transition-all duration-500 ease-in-out
+               hover:shadow-lg dark:hover:shadow-primary dark:bg-white dark:backdrop-blur-lg dark:bg-opacity-10"
             >
               <div className="text-2xl md:text-3xl text-secondary dark:text-white">
                 {item.title}

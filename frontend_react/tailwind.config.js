@@ -7,6 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      glass: {
+        backgroundColor: {
+          'purple-800': '#5D3BEE',
+        },
+        boxShadow: {
+          '2xl': '0 8px 32px 0 rgba(31,38,135,0.37)',
+        },
+        backdropFilter: {
+          9.5: 'blur(9.5px)',
+        },
+        borderColor: {
+          white: '#FFFFFF',
+        },
+      },
       height: {
         'viewport-height': 'calc(min(100vh))',
       },
