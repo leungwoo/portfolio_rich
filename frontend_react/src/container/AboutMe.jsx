@@ -25,7 +25,7 @@ function AboutMe() {
       variants={fadeIn}
       animate="show"
       initial="hidden"
-      className="flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-y-auto py-8 px-5 dark:bg-opacity-10 dark:bg-white dark:backdrop-blur-lg rounded-lg"
+      className="flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-y-auto py-8 px-5 bg-opacity-5 bg-white backdrop-blur-sm dark:backdrop-blur-md rounded-lg"
     >
       <div className="flex flex-row items-center justify gap-2">
         <h1 className="text-2xl">About Me</h1><div className="w-[50px] h-0.5 bg-primary" />

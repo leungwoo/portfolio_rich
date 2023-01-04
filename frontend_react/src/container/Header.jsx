@@ -9,13 +9,13 @@ function Header() {
   return (
     <div
       id="HOME"
-      className="md:h-viewport-height lg:pt-[96px] pb-4 overflow-y-auto
-       md:bg-backgroundImgLg bg-backgroundImgSm dark:md:bg-backgroundImgLgDark dark:bg-backgroundImgSmDark bg-bottom bg-no-repeat md:bg-headerbg md:bg-cover md:bg-repeat dark:bg-black"
+      className="md:h-viewport-height lg:pt-[96px] pb-4
+       md:bg-backgroundHeader5 dark:md:bg-backgroundHeaderDark6 bg-no-repeat md:bg-headerbg md:bg-cover md:bg-repeat dark:bg-black"
     >
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: [0, 1] }}
-        className="md:pt-[170px] pt-[100px] flex flex-col-reverse md:flex-row"
+        className="md:pt-[170px] pt-[100px] flex flex-col-reverse md:flex-row md:bg-none bg-backgroundImgSmNew bg-cover bg-center"
       >
         <div className=" flex-1  mx-auto md:ml-30 md:justify-center ">
           <img src={images.richard} alt="richard" className="md:mx-auto" />

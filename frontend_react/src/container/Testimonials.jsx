@@ -37,7 +37,7 @@ function Testimonials() {
       variants={fadeIn}
       initial="hidden"
       animate="show"
-      className=" flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-auto py-8 px-4 dark:bg-opacity-10 dark:bg-white dark:backdrop-blur-lg rounded-lg"
+      className=" flex-1 max-h-[300px] md:max-h-[400px] flex-col justify-center items-center overflow-auto py-8 px-5 bg-opacity-5 backdrop-blur-sm bg-white dark:backdrop-blur-md rounded-lg"
     >
       <div className="flex flex-row items-center justify gap-2 mb-4">
         <h1 className="text-2xl">Testimonials</h1><div className="w-[50px] h-0.5 bg-primary" />
@@ -50,7 +50,7 @@ function Testimonials() {
           key={id}
         >
           <div
-            className="shadow-md hover:shadow-lg dark:shadow-md dark:hover:shadow-sm dark:hover:shadow-primary transition-all duration-1000  flex flex-col justify-center items-center py-4"
+            className="shadow-md hover:shadow-lg dark:shadow-md dark:hover:shadow-2xl transition-all duration-1000  flex flex-col justify-center items-center py-4"
           >
             <img src={urlFor(testimonial.imgurl)} alt={testimonial.name} className="w-40 rounded-full" />
             <p className="font-bold text-lg mb-2">{testimonial.name} </p>
