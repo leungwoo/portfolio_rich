@@ -10,7 +10,7 @@ function Header() {
     <div
       id="HOME"
       className="md:h-viewport-height lg:pt-[96px] pb-4
-       md:bg-backgroundHeader5 dark:md:bg-backgroundHeaderDark6 bg-no-repeat md:bg-headerbg md:bg-cover md:bg-repeat dark:bg-black"
+       md:bg-backgroundHeader5 dark:md:bg-backgroundHeaderDark6 bg-no-repeat md:bg-headerbg md:bg-cover md:bg-repeat dark:bg-black overflow-auto"
     >
       <motion.div
         initial={{ opacity: 0 }}

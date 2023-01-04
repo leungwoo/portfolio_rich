@@ -32,7 +32,7 @@ function ContactForm() {
   const notify = (message, hasError = false) => {
     if (hasError) {
       toast.error(message, {
-        postion: 'top-center',
+        position: 'top-center',
         autoClose: 2500,
         hideProgressBar: 'false',
         closeOnClick: 'true',
@@ -43,7 +43,7 @@ function ContactForm() {
       });
     } else {
       toast.success(message, {
-        postion: 'top-center',
+        position: 'top-center',
         autoClose: 5000,
         hideProgressBar: 'false',
         closeOnClick: 'true',
@@ -150,8 +150,8 @@ function ContactForm() {
           >
             {!loading ? 'Send Message' : 'Sending....'}
           </button>
-          <ToastContainer />
         </div>
+        <ToastContainer />
       </form>
     </motion.div>
   );
