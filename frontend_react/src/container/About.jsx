@@ -77,8 +77,8 @@ function About() {
             <div
               key={index}
               onClick={() => handleClick(item.title)}
-              className="flex flex-row md:flex-col my-4 md:p-4 p-2 bg-white shadow-lg hover:shadow-2xl cursor-pointer rounded-full justify-evenly items-center z-0 hover:transition-all duration-1000 ease-in-out
-                backdrop-blur-sm bg-opacity-5 dark:hover:shadow-md dark:hover:shadow-secondary dark:backdrop-blur-sm dark:bg-opacity-5 border dark:border-opacity-20 dark:border-primary border-primary border-opacity-20"
+              className="flex flex-row md:flex-col my-4 md:p-4 p-2 bg-white cursor-pointer rounded-full justify-evenly items-center z-0 hover:transition-all duration-1000 ease-in-out
+                backdrop-blur-sm bg-opacity-0 hover:bg-primary dark:bg-white hover:bg-opacity-5 dark:hover:bg-opacity-10 dark:backdrop-blur-sm dark:bg-opacity-5 border dark:border-opacity-20 dark:border-primary border-primary border-opacity-20"
             >
               <div className="text-2xl md:text-3xl text-secondary dark:text-white">
                 {item.title}

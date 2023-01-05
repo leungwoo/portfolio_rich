@@ -2,6 +2,10 @@ import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HiX } from 'react-icons/hi';
 
+import images from '../constants/images';
+
+const { meAnimated } = images;
+
 const sidebarVariants = {
   hidden: {
     opacity: 0,
@@ -52,7 +56,7 @@ function Sidebar({ setToggle, toggle }) {
     <AnimatePresence>
       <motion.div
         className="container rounded-tl-3xl z-20 top-0 bottom-0 right-0 p-4 w-[50%] h-screen flex flex-col
-         bg-sidebarLight dark:bg-sidebarDark justify-end items-end bg-cover bg-no-repeat bg-center bg-figma bg-white fixed"
+        justify-end items-end bg-cover bg-no-repeat bg-gradient-to-tr from-primary to-white dark:bg-gradient-to-tr dark:from-primary dark:to-black fixed "
         animate={toggle ? 'open' : 'closed'}
         initial="hidden"
         exit="exit"
@@ -60,21 +64,23 @@ function Sidebar({ setToggle, toggle }) {
       >
         <HiX onClick={() => setToggle(false)} className="w-[35px] h-[35px] text-primary" />
         <ul
-          className="links  h-screen w-full list-none m-0 p-0 flex flex-col justify-start items-start "
+          className="links h-screen w-full list-none m-0 p-0 flex flex-col justify-start items-start "
         >
-          {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', <a href="https://drive.google.com/file/d/1Ao2pGWNp7wgU9uFilX5GqzV5AJ85zBBd/view?usp=sharing" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>].map((item) => (
-            <motion.li
-              variants={listVariant}
-              key={item}
-              className="flex flex-col m-4 cursor-pointer border border-transparent p-2 rounded-lg bg-primary text-white"
-            >
-              <a
-                href={`#${item}`}
-                onClick={() => setToggle(false)}
-                className="flex flex-col font-medium text-sm no-underline hover:animate-pulse transition-all duration-500 ease-in-out"
-              >{item}
-              </a>
-            </motion.li>
+          <img src={meAnimated} alt="meanimated" className="flex w-10 h-10 ml-3" />
+          {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT',
+            <a href="https://drive.google.com/file/d/1Ao2pGWNp7wgU9uFilX5GqzV5AJ85zBBd/view?usp=sharing" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>].map((item) => (
+              <motion.li
+                variants={listVariant}
+                key={item}
+                className="flex flex-col m-4 cursor-pointer border border-transparent p-2 rounded-lg bg-white backdrop-blur-lg bg-opacity-20 dark:backdrop-blur-sm dark:bg-opacity-5"
+              >
+                <a
+                  href={`#${item}`}
+                  onClick={() => setToggle(false)}
+                  className="flex flex-col font-medium text-sm no-underline hover:animate-pulse transition-all duration-500 ease-in-out"
+                >{item}
+                </a>
+              </motion.li>
           ))}
         </ul>
       </motion.div>
