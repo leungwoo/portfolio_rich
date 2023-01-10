@@ -27,8 +27,7 @@ function Projects() {
       >
         <div className="flex flex-col md:flex-row items-center flex-1 md:gap-2 mb-4">
           <div className="w-[86px] h-0.5 bg-primary mb-2" />
-          <h1 className="text-[36px] md:text-[42px] font-medium">Take a look at
-            my recent projects
+          <h1 className="text-[36px] md:text-[42px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-600">Recent Projects
           </h1>
         </div>
         <div className="flex-1 ">
