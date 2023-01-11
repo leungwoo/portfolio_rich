@@ -56,7 +56,7 @@ function Sidebar({ setToggle, toggle }) {
     <AnimatePresence>
       <motion.div
         className="container rounded-tl-3xl z-20 top-0 bottom-0 right-0 p-4 w-[50%] h-screen flex flex-col
-        justify-end items-end bg-cover bg-no-repeat bg-gradient-to-tr from-primary to-white dark:bg-gradient-to-tr dark:from-primary dark:to-black fixed "
+        justify-end items-end bg-cover bg-no-repeat bg-gradient-to-br from-white to-primary dark:bg-gradient-to-tl dark:from-primary dark:to-black fixed "
         animate={toggle ? 'open' : 'closed'}
         initial="hidden"
         exit="exit"

@@ -2,8 +2,14 @@ import logo from '../assets/Richard Leung woo Gabriel.png';
 import logo2 from '../assets/Richard_Leung_woo_Gabriel-removebg-preview.png';
 import logo3 from '../assets/rlwgNB.png';
 import logo3D from '../assets/rlwg3D.png';
-
+import office from '../assets/office.jpg';
+import code from '../assets/code.png';
+import code1 from '../assets/code1.png';
+import shakehands from '../assets/3d-render-handshake-icon-isolated-business-concept-removebg-preview.png';
 import richard from '../assets/richardnobg.png';
+import coder from '../assets/developer_male-removebg-preview.png';
+import richard1 from '../assets/richard1.JPG';
+import richard2 from '../assets/richard2.JPG';
 import smHeaderBg from '../assets/bg-1.png';
 import smHeaderBgDark from '../assets/bg-1-bl.jpg';
 import lgHeaderBg from '../assets/headerbg.jpg';
@@ -28,11 +34,18 @@ import movieApp from '../assets/filmpire.png';
 import contactProject from '../assets/contactProject.jpg';
 
 export default {
+  code,
+  code1,
+  shakehands,
+  coder,
+  office,
   logo,
   logo2,
   logo3,
   logo3D,
   richard,
+  richard1,
+  richard2,
   smHeaderBg,
   smHeaderBgDark,
   lgHeaderBg,

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
@@ -15,13 +16,13 @@ function Header() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: [0, 1] }}
-        className="md:pt-[170px] pt-[100px] flex flex-col-reverse md:flex-row md:bg-none bg-backgroundImgSmNew bg-cover bg-center"
+        className="md:pt-[170px] pt-[100px] gap-5 md:gap-10 px-5 pb-5 flex flex-col-reverse md:flex-row md:bg-none bg-backgroundImgSmNew bg-cover bg-center items-center justify-center mx-auto"
       >
-        <div className=" flex-1  mx-auto md:ml-30 md:justify-center ">
-          <img src={images.richard} alt="richard" className="md:mx-auto" />
+        <div className=" flex-1 mx-auto">
+          <img src={images.code1} alt="richard" className="md:h-80 h-72 w-full shadow-primary shadow-md dark:shadow-white dark:shadow-md border border-primary dark:border-primary bg-white dark:bg-opacity-5 dark:border-opacity-20 border-opacity-20 backdrop-blur-sm rounded-full bg-opacity-10 object-cover" />
         </div>
-        <div className="flex-1  px-10 justify-center items-center dark:text-white space-y-4">
-          <div className="font-medium text-[42px] md:text-7xl">An Interactive Designer</div>
+        <div className="flex-1 justify-center items-center dark:text-white space-y-4">
+          <div className="font-medium text-[42px] md:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-600">Full Stack Developer</div>
           <p className="font-normal text-base"> A Software Engineer with a passion for building clean, modern, and scalable user interfaces.
             Let&apos;s collaborate and create something truly great.
           </p>
@@ -45,7 +46,7 @@ function Header() {
                 Send Message
               </button>
             </a>
-            <motion.a whileHover={{ scale: 1.1 }} className="underline font-bold" href="#PROJECTS">My Works</motion.a>
+            <a className="font-medium p-2 border border-primary border-opacity-20 hover:bg-primary hover:bg-opacity-10 backdrop-blur-sm rounded-lg bg-white dark:bg-white dark:bg-opacity-5 dark:border-opacity-20 dark:hover:bg-opacity-20 text-secondary dark:text-white" href="#PROJECTS">My Works</a>
           </div>
           <Icons />
         </div>

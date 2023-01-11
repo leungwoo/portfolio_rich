@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { images } from '../constants';
 import { Icons } from '../components';
 
-const { contactProject } = images;
+const { shakehands } = images;
 
 function ContactForm() {
   // const [notification, setNotification] = useState('');
@@ -86,13 +86,18 @@ function ContactForm() {
       <div className="flex-1 justify-center items-center">
         <div className="flex flex-col md:flex-row justify-center items-center md:gap-2">
           <div className="flex w-[86px] h-0.5 bg-primary mb-2" />
-          <h1 className="text-[36px] md:text-[42px] font-medium pb-5">Got a project? Let’s talk</h1>
+          <h1 className="text-[36px] md:text-[42px] font-medium pb-5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-600">Got a project? Let’s talk</h1>
         </div>
         <h1 className="pb-4 text-secondary font-bold italic">
           “Plan, take Massive Action and Fail Forward.  –Richard Leung Woo-Gabriel ”
         </h1>
         <Icons />
-        <img src={contactProject} alt="contact" className=" object-cover max-h-[400px] md:max-h-[500px] rounded-full pb-5" />
+        <img
+          src={shakehands}
+          alt="contact"
+          className=" shadow-primary shadow-md dark:shadow-white dark:shadow-md mx-auto w-full border border-primary dark:border-primary
+           bg-white dark:bg-opacity-5 dark:border-opacity-20 border-opacity-20 backdrop-blur-sm rounded-full bg-opacity-10 object-cover pb-5"
+        />
       </div>
       <form onSubmit={sendEmail} ref={form} className="flex-1 flex flex-col gap-4">
         <div className="">

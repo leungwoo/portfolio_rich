@@ -51,7 +51,7 @@ function Testimonials() {
           key={id}
         >
           <div
-            className="hover:bg-primary hover:bg-opacity-10 dark:bg-white dark:bg-opacity-0 hover:shadow-lg dark:hover:shadow-lg dark:hover:bg-opacity-5 rounded-lg transition-all duration-1000  flex flex-col justify-center items-center py-4"
+            className="hover:bg-primary hover:bg-opacity-10 dark:bg-white dark:bg-opacity-0 hover:shadow-lg dark:hover:shadow-lg dark:hover:bg-opacity-10 rounded-lg transition-all duration-1000  flex flex-col justify-center items-center py-4"
           >
             <img src={urlFor(testimonial.imgurl)} alt={testimonial.name} className="w-40 rounded-full" />
             <p className="font-bold text-lg mb-2">{testimonial.name} </p>

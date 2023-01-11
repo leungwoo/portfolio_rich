@@ -27,8 +27,7 @@ function Projects() {
       >
         <div className="flex flex-col md:flex-row items-center flex-1 md:gap-2 mb-4">
           <div className="w-[86px] h-0.5 bg-primary mb-2" />
-          <h1 className="text-[36px] md:text-[42px] font-medium">Take a look at
-            my recent projects
+          <h1 className="text-[36px] md:text-[42px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-600">Recent Projects
           </h1>
         </div>
         <div className="flex-1 ">
@@ -43,11 +42,11 @@ function Projects() {
         whileInView={{ opacity: [0, 1] }}
         hidden={{ opacity: 1 }}
         viewport={{ once: false, amount: 0.25 }}
-        className="flex pb-5 flex-wrap md:px-[200px] px-5 justify-start w-full gap-4"
+        className="flex pb-5 flex-wrap md:px-[200px] px-5 justify-start w-full gap-2"
       >
         {projects.map((project, index) => (
           <motion.a
-            className="relative w-full  group cursor-pointer flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] rounded-lg shadow-lg overflow-hidden"
+            className="relative w-full group cursor-pointer flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] rounded-lg shadow-lg "
             href={project.link}
             target="_blank"
             rel="noreferrer"
