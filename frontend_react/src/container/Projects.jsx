@@ -42,11 +42,11 @@ function Projects() {
         whileInView={{ opacity: [0, 1] }}
         hidden={{ opacity: 1 }}
         viewport={{ once: false, amount: 0.25 }}
-        className="flex pb-5 flex-wrap md:px-[200px] px-5 justify-start w-full gap-4"
+        className="flex pb-5 flex-wrap md:px-[200px] px-5 justify-start w-full gap-2"
       >
         {projects.map((project, index) => (
           <motion.a
-            className="relative w-full  group cursor-pointer flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] rounded-lg shadow-lg overflow-hidden"
+            className="relative w-full group cursor-pointer flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] rounded-lg shadow-lg "
             href={project.link}
             target="_blank"
             rel="noreferrer"

@@ -29,12 +29,12 @@ function About() {
   }, []);
 
   return (
-    <div id="ABOUT" className="md:h-viewport-height pt-[110px] overflow-y-auto bg-backgroundHeader2 dark:bg-backgroundHeaderDark8 bg-no-repeat bg-cover bg-center dark:text-white px-5">
+    <div id="ABOUT" className="md:h-viewport-height pt-[110px] overflow-y-auto bg-backgroundHeader2 dark:bg-backgroundHeaderDark8 bg-no-repeat bg-cover bg-center dark:text-white px-5 pb-5">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: [0, 1] }}
         viewport={{ once: false, amount: 0.25 }}
-        className="flex flex-col pb-5 lg:flex-row md:px-[100px] lg:px-[200px] justify-evenly items-center gap-10 z-0"
+        className="flex flex-col pb-5 lg:flex-row md:px-[100px] lg:px-[200px] justify-evenly items-center gap-5 md:gap-10 z-0"
       >
         <div className="flex flex-col md:flex-row items-center flex-1 md:gap-2">
           <div className="flex w-[86px] h-0.5 bg-primary mb-2" />
@@ -44,7 +44,7 @@ function About() {
             <span>Technologies</span>
           </div>
         </div>
-        <div className="items-center flex flex-wrap justify-center gap-2 pt-2 px-4 w-full">
+        <div className="items-center flex flex-wrap justify-center gap-3 pt-2 px-4 w-full">
           {abouts.map((about, index) => (
             <motion.a
               key={index}
@@ -55,7 +55,7 @@ function About() {
             >
               <div className=" text-base font-medium justify-around items-center ">
                 <img
-                  className="shadow-md shadow-primary w-11 h-11 md:w-10 md:h-10 object-cover justify-center mx-auto items-center rounded-full mb-2"
+                  className="shadow-md dark:shadow-md dark:shadow-white w-11 h-11 md:w-12 md:h-12 object-cover justify-center mx-auto items-center p-1 rounded-md mb-2 "
                   src={urlFor(about.imgUrl)}
                   alt={about.title}
                 />
@@ -70,7 +70,7 @@ function About() {
         whileInView={{ opacity: [0, 1] }}
         hidden={{ opacity: 1 }}
         viewport={{ once: false, amount: 0.25 }}
-        className="flex flex-col lg:flex-row md:px-[200px]"
+        className="flex flex-col lg:flex-row md:px-[200px] gap-5 md:gap-10 "
       >
         <div className="flex-1 px-5 z-0">
           {sections.map((item, index) => (
@@ -91,8 +91,8 @@ function About() {
           {selectedItem === null ? (
             <img
               src={code}
-              className=" shadow-primary shadow-md dark:shadow-white dark:shadow-md mx-auto w-full border border-primary dark:border-primary
-           bg-white dark:bg-opacity-5 dark:border-opacity-20 border-opacity-20 backdrop-blur-sm rounded-full bg-opacity-10 object-cover"
+              className="shadow-primary shadow-md dark:shadow-white dark:shadow-md mx-auto h-full w-full border border-primary dark:border-primary
+           bg-white dark:bg-opacity-5 dark:border-opacity-20 border-opacity-20 backdrop-blur-sm rounded-full bg-opacity-5 object-cover"
             />
           ) : null}
           {selectedItem === 'About Me' && <AboutMe />}
