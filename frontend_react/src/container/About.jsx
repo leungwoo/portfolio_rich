@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import images from '../constants/images';
 import { urlFor, client } from '../client';
@@ -89,7 +90,9 @@ function About() {
         </div>
         <div className="flex-1 justify-center items-center">
           {selectedItem === null ? (
-            <img
+            <LazyLoadImage
+              effect="blur"
+              placeholderSrc={images.codereduced}
               src={code}
               className="shadow-primary shadow-md dark:shadow-white dark:shadow-md mx-auto h-full w-full border border-primary dark:border-primary
            bg-white dark:bg-opacity-5 dark:border-opacity-20 border-opacity-20 backdrop-blur-sm rounded-full bg-opacity-5 object-cover"

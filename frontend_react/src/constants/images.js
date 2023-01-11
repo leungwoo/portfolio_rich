@@ -4,7 +4,9 @@ import logo3 from '../assets/rlwgNB.png';
 import logo3D from '../assets/rlwg3D.png';
 import office from '../assets/office.jpg';
 import code from '../assets/code.png';
+import codereduced from '../assets/codereduced.png';
 import code1 from '../assets/code1.png';
+import code1reduced from '../assets/code1reduced.png';
 import shakehands from '../assets/3d-render-handshake-icon-isolated-business-concept-removebg-preview.png';
 import richard from '../assets/richardnobg.png';
 import coder from '../assets/developer_male-removebg-preview.png';
@@ -35,7 +37,9 @@ import contactProject from '../assets/contactProject.jpg';
 
 export default {
   code,
+  codereduced,
   code1,
+  code1reduced,
   shakehands,
   coder,
   office,
