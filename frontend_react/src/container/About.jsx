@@ -40,9 +40,7 @@ function About() {
         <div className="flex flex-col md:flex-row items-center flex-1 md:gap-2">
           <div className="flex w-[86px] h-0.5 bg-primary mb-2" />
           <div className="flex text-[32px] md:text-[42px] font-medium gap-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-600">
-            <span>My</span>
-            <br />
-            <span>Technologies</span>
+            My&nbsp;Technologies
           </div>
         </div>
         <div className="items-center flex flex-wrap justify-center gap-3 pt-2 px-4 w-full">
