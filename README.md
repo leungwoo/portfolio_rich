@@ -3,7 +3,7 @@
 This personal portfolio project was built with React.js, Tailwind and Sanity. It features a clean and modern design, showcasing my work and accomplishments in web development.
 
 ### Application in Action
-![portfolio](https://i.imgur.com/dhK42Ng.png)
+![portfolio](https://i.imgur.com/yI1bxUd.png)
 
 
 ### Built With
