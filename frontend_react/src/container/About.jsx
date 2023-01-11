@@ -37,7 +37,7 @@ function About() {
         viewport={{ once: false, amount: 0.25 }}
         className="flex flex-col pb-5 lg:flex-row md:px-[100px] lg:px-[200px] justify-evenly items-center gap-5 md:gap-10 z-0"
       >
-        <div className="flex flex-col md:flex-row items-center flex-1 md:gap-2">
+        <div className="flex flex-col md:flex-row items-center md:gap-2">
           <div className="flex w-[86px] h-0.5 bg-primary mb-2" />
           <div className="flex text-[32px] md:text-[42px] font-medium gap-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-600">
             My&nbsp;Technologies
