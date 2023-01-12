@@ -7,10 +7,10 @@ import images from '../constants/images';
 import { urlFor, client } from '../client';
 import { AboutMe, Experience, Testimonials } from './index';
 
-const { meAnimated, code, thumbs, experience } = images;
+const { meAnimated2, code, thumbs, experience } = images;
 
 const sections = [
-  { title: 'About Me', description: '<Web Developer/>', imgUrl: meAnimated },
+  { title: 'About Me', description: '<Web Developer/>', imgUrl: meAnimated2 },
   { title: 'Testimonials', description: '<What people say/>', imgUrl: thumbs },
   { title: 'Experience', description: '<Growth and Development/>', imgUrl: experience },
 ];
@@ -39,9 +39,9 @@ function About() {
       >
         <div className="flex flex-col md:flex-row items-center md:gap-2">
           <div className="flex w-[86px] h-0.5 bg-primary mb-2" />
-          <div className="flex text-[32px] md:text-[42px] font-medium gap-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-600">
+          <h1 className="flex text-[32px] md:text-[42px] font-medium gap-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-600">
             My&nbsp;Technologies
-          </div>
+          </h1>
         </div>
         <div className="items-center flex flex-wrap justify-center gap-3 pt-2 px-4 w-full">
           {abouts.map((about, index) => (
@@ -82,7 +82,7 @@ function About() {
               <div className="text-2xl md:text-3xl text-secondary dark:text-white">
                 {item.title}
               </div>
-              <img src={item.imgUrl} alt={item.title} className="md:w-10 md:h-10 w-8 h-8 object-contain" />
+              <img src={item.imgUrl} alt={item.title} className="md:w-12 md:h-12 w-8 h-8 object-contain" />
             </div>
           ))}
         </div>

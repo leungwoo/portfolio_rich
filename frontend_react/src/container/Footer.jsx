@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 
 import { images } from '../constants';
 
-const { logo } = images;
+const { meAnimated2 } = images;
 
 function Footer() {
   return (
     <div className="flex flex-col items-center justify-center pt-2 dark:bg-black dark:text-white">
       <div className="flex flex-col items-center justify-between mb-4">
-        <img src={logo} alt="logo" className="flex-1 object-cover mb-4 max-w-[70px] max-h-[70px] shadow-primary shadow-sm rounded-full" />
+        <img src={meAnimated2} alt="logo" className="flex-1 object-cover mb-4 max-w-[70px] max-h-[70px] shadow-primary dark:shadow-white shadow-sm rounded-full" />
         <ul className="md:flex flex-1 justify-end items-center list-none text-base">
           {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', <a href="https://www.dropbox.com/s/5arl2s285thrzej/Richard_Leung%20Woo-Gabriel_Resume.pdf?dl=0" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>,
           ].map((item) => (

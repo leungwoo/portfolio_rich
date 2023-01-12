@@ -6,6 +6,7 @@ import office from '../assets/office.jpg';
 import code from '../assets/code.png';
 import codereduced from '../assets/codereduced.png';
 import code1 from '../assets/code1.png';
+import code2 from '../assets/code2.png';
 import code1reduced from '../assets/code1reduced.png';
 import shakehands from '../assets/3d-render-handshake-icon-isolated-business-concept-removebg-preview.png';
 import richard from '../assets/richardnobg.png';
@@ -25,6 +26,7 @@ import tailwind from '../assets/tailwind.png';
 import framer from '../assets/framer.png';
 import figma from '../assets/figma.png';
 import meAnimated from '../assets/meanimated.png';
+import meAnimated2 from '../assets/myavatar-transformed-transformed.png';
 import coding from '../assets/coding.jpeg';
 import thumbs from '../assets/thumbsup.png';
 import experience from '../assets/experience.png';
@@ -39,6 +41,7 @@ export default {
   code,
   codereduced,
   code1,
+  code2,
   code1reduced,
   shakehands,
   coder,
@@ -63,6 +66,7 @@ export default {
   framer,
   figma,
   meAnimated,
+  meAnimated2,
   coding,
   thumbs,
   experience,

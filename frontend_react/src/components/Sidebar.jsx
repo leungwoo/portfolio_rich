@@ -4,7 +4,7 @@ import { HiX } from 'react-icons/hi';
 
 import images from '../constants/images';
 
-const { meAnimated } = images;
+const { meAnimated2 } = images;
 
 const sidebarVariants = {
   hidden: {
@@ -66,7 +66,7 @@ function Sidebar({ setToggle, toggle }) {
         <ul
           className="links h-screen w-full list-none m-0 p-0 flex flex-col justify-start items-start "
         >
-          <img src={meAnimated} alt="meanimated" className="flex w-10 h-10 ml-3" />
+          <img src={meAnimated2} alt="meanimated" className="flex w-11 h-11 mx-auto object-cover mb-4 max-w-[70px] max-h-[70px] shadow-primary dark:shadow-white shadow-sm rounded-full" />
           {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT',
             <a href="https://drive.google.com/file/d/1Ao2pGWNp7wgU9uFilX5GqzV5AJ85zBBd/view?usp=sharing" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>].map((item) => (
               <motion.li

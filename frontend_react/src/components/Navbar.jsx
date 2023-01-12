@@ -8,7 +8,7 @@ import { images } from '../constants';
 import { Sidebar } from './index';
 import { DarkModeContext } from '../App';
 
-const { logo2, logo3 } = images;
+const { meAnimated2 } = images;
 
 function Navbar() {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
@@ -22,7 +22,7 @@ function Navbar() {
         href="#HOME"
         className="logo flex justify-start items-center "
       >
-        <img src={darkMode ? logo3 : logo2} alt="logo" className="flex-1 object-cover max-w-[70px] max-h-[70px] " />
+        <img src={meAnimated2} alt="logo" className="flex-1 object-cover mb-2 max-w-[60px] max-h-[60px] shadow-primary shadow-sm dark:shadow-white rounded-full " />
       </a>
       <ul className="links hidden md:flex flex-1 justify-end items-center list-none text-base">
         {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', <a href="https://drive.google.com/file/d/1Ao2pGWNp7wgU9uFilX5GqzV5AJ85zBBd/view?usp=sharing" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>,
