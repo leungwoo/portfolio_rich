@@ -7,12 +7,12 @@ import images from '../constants/images';
 import { urlFor, client } from '../client';
 import { AboutMe, Experience, Testimonials } from './index';
 
-const { meAnimated2, code, thumbs, experience } = images;
+const { meAnimated2, code, avatarpoint, avatarstrong } = images;
 
 const sections = [
   { title: 'About Me', description: '<Web Developer/>', imgUrl: meAnimated2 },
-  { title: 'Testimonials', description: '<What people say/>', imgUrl: thumbs },
-  { title: 'Experience', description: '<Growth and Development/>', imgUrl: experience },
+  { title: 'Testimonials', description: '<What people say/>', imgUrl: avatarpoint },
+  { title: 'Experience', description: '<Growth and Development/>', imgUrl: avatarstrong },
 ];
 
 function About() {
@@ -82,7 +82,7 @@ function About() {
               <div className="text-2xl md:text-3xl text-secondary dark:text-white">
                 {item.title}
               </div>
-              <img src={item.imgUrl} alt={item.title} className="md:w-12 md:h-12 w-8 h-8 object-contain" />
+              <img src={item.imgUrl} alt={item.title} className="md:w-20 md:h-20 w-10 h-10 object-contain" />
             </div>
           ))}
         </div>

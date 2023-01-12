@@ -36,8 +36,16 @@ import musicApp from '../assets/musicApp.png';
 import trainApp from '../assets/trainhard.png';
 import movieApp from '../assets/filmpire.png';
 import contactProject from '../assets/contactProject.jpg';
+import avatarjump from '../assets/jumpavatar-transformed-transformed.png';
+import avatarpoint from '../assets/pointavatar.png';
+import avatarrest from '../assets/smileavatar-transformed-transformed.png';
+import avatarstrong from '../assets/avatarstrong-transformed-transformed.png';
 
 export default {
+  avatarstrong,
+  avatarjump,
+  avatarpoint,
+  avatarrest,
   code,
   codereduced,
   code1,
