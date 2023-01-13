@@ -82,7 +82,7 @@ function About() {
               <div className="text-2xl md:text-3xl text-secondary dark:text-white">
                 {item.title}
               </div>
-              <img src={item.imgUrl} alt={item.title} className="md:w-20 md:h-20 w-10 h-10 object-contain" />
+              <img src={item.imgUrl} alt={item.title} className="md:w-20 md:h-16 w-11 h-11 object-contain" />
             </div>
           ))}
         </div>
@@ -93,7 +93,7 @@ function About() {
               placeholderSrc={images.codereduced}
               src={code}
               className="shadow-primary shadow-md dark:shadow-white dark:shadow-md mx-auto h-full w-full border border-primary dark:border-primary
-           bg-white dark:bg-opacity-5 dark:border-opacity-20 border-opacity-20 backdrop-blur-sm rounded-full bg-opacity-5 object-cover"
+           bg-white dark:bg-opacity-5 dark:border-opacity-20 border-opacity-20 backdrop-blur-sm rounded-full bg-opacity-5 object-cover md:mt-2"
             />
           ) : null}
           {selectedItem === 'About Me' && <AboutMe />}
