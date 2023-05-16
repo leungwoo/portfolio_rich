@@ -32,7 +32,7 @@ import thumbs from '../assets/thumbsup.png';
 import experience from '../assets/experience.png';
 import github from '../assets/github.jpg';
 import carRental from '../assets/Carrental.png';
-import musicApp from '../assets/musicApp.png';
+import musicApp from '../assets/MusicPlayer.png';
 import trainApp from '../assets/trainhard.png';
 import movieApp from '../assets/filmpire.png';
 import contactProject from '../assets/contactProject.jpg';

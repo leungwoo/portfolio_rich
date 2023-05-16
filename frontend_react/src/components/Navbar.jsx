@@ -25,7 +25,7 @@ function Navbar() {
         <img src={avatarrest} alt="logo" className="flex-1 object-cover mb-2 max-w-[60px] max-h-[60px] shadow-primary shadow-sm dark:shadow-white rounded-full " />
       </a>
       <ul className="links hidden md:flex flex-1 justify-end items-center list-none text-base">
-        {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', <a href="https://drive.google.com/file/d/1Ao2pGWNp7wgU9uFilX5GqzV5AJ85zBBd/view?usp=sharing" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>,
+        {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT', <a href="https://drive.google.com/file/d/1kr-8tbZ-7rduF7wYztfjdDArA8AvFfg8/view?usp=share_link" download="resume.pdf" target="_blank" rel="noreferrer">RESUME</a>,
         ].map((item) => (
           <li key={item} className="flex flex-col mx-4 cursor-pointer justify-center items-center ">
             <motion.a
