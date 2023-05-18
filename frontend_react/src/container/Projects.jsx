@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { ImGithub } from 'react-icons/im';
+import { AiOutlineEye } from 'react-icons/ai';
 
 // import { images } from '../constants';
 import { urlFor, client } from '../client';
@@ -54,11 +56,8 @@ function Projects() {
         className="flex pb-5 flex-wrap md:px-[200px] px-5 justify-start w-full gap-2"
       >
         {projects.map((project, index) => (
-          <motion.a
-            className="relative w-full group cursor-pointer flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] rounded-lg shadow-lg "
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
+          <div
+            className="relative w-full group flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] rounded-lg shadow-lg "
             key={index}
           >
             <img
@@ -84,12 +83,23 @@ function Projects() {
                       <div className="flex ">
                         {project.description}
                       </div>
+                      <div className="flex flex-row gap-4 mt-1">
+                        <motion.a whileHover={{ scale: 1.1 }} className="flex flex-col justify-center items-center" href={project.codeLink} target="_blank">
+                          <ImGithub size={25} />
+                          <p className="text-xs">view code</p>
+                        </motion.a>
+                        <motion.a whileHover={{ scale: 1.1 }} className="flex flex-col justify-center items-center" href={project.projectLink} target="_blank">
+                          <AiOutlineEye size={25} />
+                          <p className="text-xs">site</p>
+                        </motion.a>
+                      </div>
+
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </motion.a>
+          </div>
         ))}
       </motion.div>
     </div>
