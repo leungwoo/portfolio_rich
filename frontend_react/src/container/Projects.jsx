@@ -1,18 +1,29 @@
-import React from 'react';
+/* eslint-disable no-console */
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { ImGithub } from 'react-icons/im';
+import { AiOutlineEye } from 'react-icons/ai';
 
-import { images } from '../constants';
+// import { images } from '../constants';
+import { urlFor, client } from '../client';
 
-const { carRental, musicApp, trainApp, movieApp } = images;
+// const { carRental, musicApp, trainApp, movieApp } = images;
 
-const projects = [
-  { title: 'Car Rental', description: 'Lorem ipsum dolor amet, consectetur adipiscing st elit.', imgUrl: carRental, link: 'https://web3-car-rent.vercel.app/car-rent' },
-  { title: 'Music Universe', description: 'Lorem ipsum dolor amet, consectetur adipiscing st elit.', imgUrl: musicApp, link: 'https://musicuniverse.vercel.app/' },
-  { title: 'Fitness App', description: 'Lorem ipsum dolor amet, consectetur adipiscing st elit.', imgUrl: trainApp, link: 'https://trainhard.vercel.app/' },
-  { title: 'Filmworld', description: 'Lorem ipsum dolor amet, consectetur adipiscing st elit.', imgUrl: movieApp, link: 'https://filmworld.vercel.app/' },
-];
+// const projects = [
+//   { title: 'Car Rental', description: 'An online car rental service company.', imgUrl: carRental, link: 'https://web3-car-rent.vercel.app/car-rent' },
+//   { title: 'Music Universe', description: 'An Open source music application for music lovers. ', imgUrl: musicApp, link: 'https://musicuniverse.vercel.app/' },
+//   { title: 'Fitness App', description: 'Want exercises on demand. Fitness enthusiasts can now search any body part or exercise and get videos and information.', imgUrl: trainApp, link: 'https://trainhard.vercel.app/' },
+//   { title: 'Filmworld', description: 'A Movies application that keeps you up to date with what you love. Search different genres and watch trailers.', imgUrl: movieApp, link: 'https://filmworld.vercel.app/' },
+// ];
 
 function Projects() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "works"]';
+    client.fetch(query).then((data) => setProjects(data));
+  }, []);
+  console.log(projects);
   return (
     <div
       id="PROJECTS"
@@ -27,7 +38,7 @@ function Projects() {
       >
         <div className="flex flex-col md:flex-row items-center flex-1 md:gap-2 mb-4">
           <div className="w-[86px] h-0.5 bg-primary mb-2" />
-          <h1 className="text-[36px] md:text-[42px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-600">Recent Projects
+          <h1 className="text-[36px] md:text-[42px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-600"> Projects
           </h1>
         </div>
         <div className="flex-1 ">
@@ -45,37 +56,50 @@ function Projects() {
         className="flex pb-5 flex-wrap md:px-[200px] px-5 justify-start w-full gap-2"
       >
         {projects.map((project, index) => (
-          <motion.a
-            className="relative w-full group cursor-pointer flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] rounded-lg shadow-lg "
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
-            key={project.title + index}
+          <div
+            className="relative w-full group flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] rounded-lg shadow-lg "
+            key={index}
           >
             <img
-              src={project.imgUrl}
+              src={urlFor(project.imgUrl)}
               alt={project.title}
               className="flex rounded-lg absolute object-cover w-full h-full inset-0 group-hover:opacity-10"
             />
             <div className="relative p-5">
-              <div className="mt-40">
+              <div className="mt-20">
                 <div className="transition-all transform
                                translate-y-6 opacity-0
                                 group-hover:opacity-100
                                 group-hover:-translate-y-20 duration-1000"
                 >
                   <div className="p-2">
-                    <div className="flex items-center justify-center">
-                      <div className=" w-12 h-0.5 bg-primary" />
-                      <p className="text-3xl font-semibold">
-                        {project.title}
-                      </p>
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="flex flex-row items-center justify-center">
+                        <div className="flex w-12 h-0.5 bg-primary" />
+                        <div className="flex text-3xl font-semibold">
+                          {project.title}
+                        </div>
+                      </div>
+                      <div className="flex ">
+                        {project.description}
+                      </div>
+                      <div className="flex flex-row gap-4 mt-1">
+                        <motion.a whileHover={{ scale: 1.1 }} className="flex flex-col justify-center items-center" href={project.codeLink} target="_blank">
+                          <ImGithub size={25} />
+                          <p className="text-xs">view code</p>
+                        </motion.a>
+                        <motion.a whileHover={{ scale: 1.1 }} className="flex flex-col justify-center items-center" href={project.projectLink} target="_blank">
+                          <AiOutlineEye size={25} />
+                          <p className="text-xs">site</p>
+                        </motion.a>
+                      </div>
+
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </motion.a>
+          </div>
         ))}
       </motion.div>
     </div>
