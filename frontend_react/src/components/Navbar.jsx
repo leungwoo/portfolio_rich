@@ -38,7 +38,7 @@ function Navbar() {
         ))}
       </ul>
       <div className="cursor-pointer hover:text-primary hover:transition-all duration-500 ease-in-out ">
-        {darkMode ? <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} size={20} /> : <BsSunFill onClick={() => setDarkMode(!darkMode)} size={20} />}
+        {darkMode ? <BsSunFill onClick={() => setDarkMode(!darkMode)} size={20} /> : <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} size={20} />}
       </div>
 
       <div className="appBarMenu flex md:hidden w-[39px] h-[35px] justify-center items-center relative rounded-full bg-primary">
