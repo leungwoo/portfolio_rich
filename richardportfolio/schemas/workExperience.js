@@ -24,6 +24,9 @@ export default {
             options: {
               hotspot: true,
             },
+            store: {
+                originalFilename: true
+              }
             }
     ]
     
