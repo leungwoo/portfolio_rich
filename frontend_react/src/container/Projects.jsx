@@ -1,20 +1,10 @@
-/* eslint-disable no-console */
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ImGithub } from 'react-icons/im';
 import { AiOutlineEye } from 'react-icons/ai';
 
-// import { images } from '../constants';
 import { urlFor, client } from '../client';
-
-// const { carRental, musicApp, trainApp, movieApp } = images;
-
-// const projects = [
-//   { title: 'Car Rental', description: 'An online car rental service company.', imgUrl: carRental, link: 'https://web3-car-rent.vercel.app/car-rent' },
-//   { title: 'Music Universe', description: 'An Open source music application for music lovers. ', imgUrl: musicApp, link: 'https://musicuniverse.vercel.app/' },
-//   { title: 'Fitness App', description: 'Want exercises on demand. Fitness enthusiasts can now search any body part or exercise and get videos and information.', imgUrl: trainApp, link: 'https://trainhard.vercel.app/' },
-//   { title: 'Filmworld', description: 'A Movies application that keeps you up to date with what you love. Search different genres and watch trailers.', imgUrl: movieApp, link: 'https://filmworld.vercel.app/' },
-// ];
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -23,7 +13,7 @@ function Projects() {
     const query = '*[_type == "works"]';
     client.fetch(query).then((data) => setProjects(data));
   }, []);
-  console.log(projects);
+
   return (
     <div
       id="PROJECTS"
