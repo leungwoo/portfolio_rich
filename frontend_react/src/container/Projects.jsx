@@ -5,6 +5,7 @@ import { ImGithub } from 'react-icons/im';
 import { AiOutlineEye } from 'react-icons/ai';
 
 import { urlFor, client } from '../client';
+import { Skeleton } from '../components';
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -50,11 +51,14 @@ function Projects() {
             className="relative w-full group flex-1 md:min-w-[300px] min-w-[200px] md:max-h-[200px] rounded-lg shadow-lg "
             key={index}
           >
-            <img
-              src={urlFor(project.imgUrl)}
-              alt={project.title}
-              className="flex rounded-lg absolute object-cover w-full h-full inset-0 group-hover:opacity-10"
-            />
+            {project.imgUrl
+              ? (
+                <img
+                  src={urlFor(project.imgUrl)}
+                  alt={project.title}
+                  className="flex rounded-lg absolute object-cover w-full h-full inset-0 group-hover:opacity-10"
+                />
+              ) : <Skeleton />}
             <div className="relative p-5">
               <div className="mt-20">
                 <div className="transition-all transform
