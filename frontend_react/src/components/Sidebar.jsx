@@ -83,7 +83,7 @@ function Sidebar({ setToggle, toggle }) {
               target="_blank"
               rel="noreferrer"
             >
-              RESUME
+              VIEW RESUME
             </a>,
           ].map((item) => (
             <motion.li
